@@ -25,9 +25,6 @@
     .container {
         flex-flow: row-reverse;
     }
-
-
-
     .my-sm-4 {
         margin-top: 1.5em;
         margin-bottom: 1.5em;
@@ -51,7 +48,16 @@
     .navbar-nav {
         padding-right: 0 !important;
     }
-
+    .banner-slider-container .swiper-slide .left {
+        margin-top: 80px;
+    }
+    .whatClienSay-container .white-container {
+        right: 0;
+    }
+    .banner-slider-container .swiper-slide .text{
+        font-size: 15px;
+        line-height: 1.5rem;
+    }
 }
 
 /* // Medium devices (tablets, 768px and up) */
