@@ -97,415 +97,309 @@
                                         <ul class="nav nav-tabs" role="tablist">
                                             <li role="presentation" class="active">
                                                 <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab"
-                                                    aria-expanded="true"><span class="round-tab">1 </span> <i>Step
-                                                        1</i></a>
+                                                    aria-expanded="true"><span class="round-tab">1 </span> <i>البيانات
+                                                        الأساسية</i></a>
                                             </li>
                                             <li role="presentation" class="disabled">
                                                 <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab"
-                                                    aria-expanded="false"><span class="round-tab">2</span> <i>Step
-                                                        2</i></a>
+                                                    aria-expanded="false"><span class="round-tab">2</span>
+                                                    <i>العنوان</i></a>
                                             </li>
                                             <li role="presentation" class="disabled">
                                                 <a href="#step3" data-toggle="tab" aria-controls="step3"
-                                                    role="tab"><span class="round-tab">3</span> <i>Step 3</i></a>
+                                                    role="tab"><span class="round-tab">3</span> <i>الحساب البنكي</i></a>
                                             </li>
-                                            <li role="presentation" class="disabled">
+                                            <li role="presentation" class="disabled" style="display: none;">
                                                 <a href="#step4" data-toggle="tab" aria-controls="step4"
-                                                    role="tab"><span class="round-tab">4</span> <i>Step 4</i></a>
+                                                    role="tab"><span class="round-tab">4</span> <i>الحساب البنكي</i></a>
                                             </li>
                                         </ul>
                                     </div>
-                                    <form role="form" class="login-box">
-                                        <div class="tab-content" id="main_form">
-                                            <div class="tab-pane active" role="tabpanel" id="step1">
-                                                <!-- Personal Information Section -->
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" role="tabpanel" id="step1">
+                                            <form class="form-validate" novalidate>
                                                 <div class="form-section">
-                                                    <h5>بياناتك</h5>
+                                                    <h5 class="information">بياناتك</h5>
                                                     <div class="row g-3 align-items-center">
+                                                        <div class="col-md-12">
+                                                            <label for="fullName" class="form-label">الاسم ( من أربعة
+                                                                مقاطع ) :</label>
+                                                            <div class="input-group">
+                                                                <input type="text" required class="form-control"
+                                                                    id="fullName" placeholder="أدخل الاسم الثلاثي">
+                                                                <div class="invalid-feedback">ادخل الاسم (من لربعة
+                                                                    مقاطع)
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                         <div class="col-md-6">
-                                                            <label for="fullName" class="form-label">الاسم (يجب أن
-                                                                يكون ثلاثي)</label>
-                                                            <input type="text" class="form-control" id="fullName"
-                                                                placeholder="أدخل الاسم الثلاثي">
+                                                            <label for="nationality" class="form-label">الجنس</label>
+                                                            <div class="input-group">
+                                                                <select class="form-select form-control selectpicker"
+                                                                    required id="nationality">
+                                                                    <option value="" selected>اختر الجنس</option>
+                                                                    <option value="male">ذكر</option>
+                                                                    <option value="female">انثى</option>
+                                                                </select>
+                                                                <div class="invalid-feedback">اختر الجنس
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <label for="birthDate" class="form-label">تاريخ
                                                                 الميلاد</label>
-                                                            <input type="date" class="form-control" id="birthDate">
+                                                            <div class="input-group">
+                                                                <input type="date" class="form-control" id="birthDate"
+                                                                    required>
+                                                                <div class="invalid-feedback">ادخل تاريخ الميلاد</div>
+                                                            </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <label for="idNumber" class="form-label">رقم
                                                                 الهوية</label>
-                                                            <input type="text" class="form-control" id="idNumber"
-                                                                placeholder="أدخل رقم الهوية">
+                                                            <div class="input-group">
+                                                                <input type="text" class="form-control" id="idNumber"
+                                                                    required placeholder="أدخل رقم الهوية">
+                                                                <div class="invalid-feedback">أدخل رقم الهوية</div>
+                                                            </div>
                                                         </div>
-                                                        <div class="col-md-6">
-                                                            <label for="nationality" class="form-label">الجنسية</label>
-                                                            <select class="form-select form-control" id="nationality">
-                                                                <option selected>اختر الجنسية</option>
-                                                                <option value="1">سعودي</option>
-                                                                <option value="2">أردني</option>
-                                                                <option value="3">مصري</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="col-md-6">
+                                                        <div class="col-md-6 phonenumber-custom">
                                                             <label for="mobileNumber" class="form-label">رقم
                                                                 الجوال</label>
                                                             <div class="input-group">
-                                                                <input type="text" class="form-control"
-                                                                    id="mobileNumber" placeholder="أدخل رقم الجوال">
+                                                                <input type="text" class="form-control mobileNumber"
+                                                                    required id="mobileNumber"
+                                                                    placeholder="أدخل رقم الجوال">
+                                                                <div class="invalid-feedback">أدخل رقم الجوال</div>
                                                                 <span class="input-group-text">+966</span>
                                                             </div>
+
                                                         </div>
-                                                        <div class="col-md-6">
+                                                        <div class="col-md-12">
                                                             <label for="email" class="form-label">البريد
                                                                 الإلكتروني</label>
-                                                            <input type="email" class="form-control" id="email"
-                                                                placeholder="أدخل البريد الإلكتروني">
+                                                            <div class="input-group">
+                                                                <input type="email" class="form-control email"
+                                                                    id="email" required
+                                                                    placeholder="أدخل البريد الإلكتروني">
+                                                                <div class="invalid-feedback">أدخل البريد الإلكتروني
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-
                                                 <!-- Password Section -->
                                                 <div class="form-section">
-                                                    <h5>تحديث كلمة المرور</h5>
+                                                    <h5 class="changepassword">تحديث كلمة المرور</h5>
                                                     <div class="row g-3">
                                                         <div class="col-md-6">
                                                             <label for="newPassword" class="form-label">كلمة المرور
                                                                 الجديدة</label>
-                                                            <input type="password" class="form-control" id="newPassword"
-                                                                placeholder="أدخل كلمة المرور الجديدة">
+                                                            <div class="input-group">
+                                                                <input type="password" name="password"
+                                                                    class="form-control" id="newPassword" required
+                                                                    placeholder="أدخل كلمة المرور الجديدة">
+                                                                <div class="invalid-feedback">ادخل كلمة المرور</div>
+                                                            </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <label for="confirmPassword" class="form-label">تأكيد
                                                                 كلمة المرور</label>
-                                                            <input type="password" class="form-control"
-                                                                id="confirmPassword"
-                                                                placeholder="أدخل كلمة المرور مرة أخرى">
+                                                            <div class="input-group">
+                                                                <input type="password" name="confirm_password"
+                                                                    class="form-control" required id="confirmPassword"
+                                                                    placeholder="أدخل كلمة المرور مرة أخرى">
+                                                                <div class="invalid-feedback">كلمة المرور غير مطابقة
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-
                                                 <!-- Upload Documents Section -->
                                                 <div class="form-section">
-                                                    <h5>تحميل الوثائق الشخصية</h5>
+                                                    <h5 class="profilepic">تحميل الهوية الشخصية</h5>
                                                     <div class="row g-3">
                                                         <div class="col-md-6">
+                                                            <label for="personalDocument" class="form-label">تحميل
+                                                                الملف</label>
+                                                            <div class="file-upload-custom">
+                                                                <div class="file-name" id="file-name">تحميل الملف
+                                                                </div>
+                                                                <label class="custom-file-upload">
+                                                                    <svg width="29" height="24" viewBox="0 0 29 24"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                            d="M15.7926 3.54466C12.5451 2.94671 9.56769 4.85737 8.97365 7.52448C8.84631 8.09618 8.33892 8.50285 7.75297 8.50285C5.14024 8.50285 3.12588 10.5065 3.12588 12.8778C3.12588 15.2351 5.15106 17.2528 7.76547 17.2528C8.45614 17.2528 9.01604 17.8125 9.01604 18.5028C9.01604 19.1932 8.45614 19.7528 7.76547 19.7528C3.87695 19.7528 0.624756 16.7206 0.624756 12.8778C0.624756 9.34338 3.3486 6.50904 6.80125 6.06378C8.1311 2.43833 12.2173 0.345042 16.2441 1.08574C20.0786 1.78216 22.9112 4.88836 22.8925 8.50468C25.9276 8.58151 28.3748 11.059 28.3748 14.1278C28.3748 17.2307 25.8515 19.7528 22.7472 19.7528H21.4967C20.806 19.7528 20.2461 19.1932 20.2461 18.5028C20.2461 17.8125 20.806 17.2528 21.4967 17.2528H22.7472C24.4701 17.2528 25.8736 15.85 25.8736 14.1278C25.8736 12.3955 24.4725 11.0028 22.7472 11.0028H21.4967C21.1165 11.0028 20.757 10.83 20.5197 10.5331C20.2823 10.2363 20.193 9.8476 20.2769 9.47697C20.8687 6.86297 19.0089 4.12821 15.7958 3.54525L15.7926 3.54466Z"
+                                                                            fill="white" />
+                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                            d="M13.134 10.119C13.6224 9.63081 14.4142 9.63081 14.9026 10.119L18.6543 13.869C19.1426 14.3571 19.1426 15.1486 18.6543 15.6367C18.1659 16.1249 17.3741 16.1249 16.8857 15.6367L14.0183 12.7706L11.1509 15.6367C10.6625 16.1249 9.87069 16.1249 9.38232 15.6367C8.89394 15.1486 8.89394 14.3571 9.38232 13.869L13.134 10.119Z"
+                                                                            fill="white" />
+                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                            d="M14.0183 9.75285C14.709 9.75285 15.2689 10.3125 15.2689 11.0028V22.2528C15.2689 22.9432 14.709 23.5028 14.0183 23.5028C13.3276 23.5028 12.7677 22.9432 12.7677 22.2528V11.0028C12.7677 10.3125 13.3276 9.75285 14.0183 9.75285Z"
+                                                                            fill="white" />
+                                                                    </svg>
+                                                                    <input type="file" id="file-upload" multiple
+                                                                        required>
 
-                                                            <div class="mb-3">
-                                                                <label for="personalDocument" class="form-label">تحميل
-                                                                    الملف</label>
-                                                                <input class="form-control" type="file"
-                                                                    id="personalDocument">
-                                                                <small class="text-muted">الملف المسموح: JPG, PNG,
-                                                                    PDF</small>
+                                                                </label>
                                                             </div>
+                                                            <div class="invalid-feedback">حمل الملف</div>
+
                                                         </div>
                                                     </div>
                                                 </div>
-
-                                                <ul class="list-inline ">
-                                                    <li><button type="button" class="default-btn next-step">Continue
-                                                            to next step</button></li>
-                                                </ul>
-                                            </div>
-                                            <div class="tab-pane" role="tabpanel" id="step2">
-                                                <h4 class="text-center">Step 2</h4>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label>Address 1 *</label>
-                                                            <input class="form-control" type="text" name="name"
-                                                                placeholder="">
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label>City / Town *</label>
-                                                            <input class="form-control" type="text" name="name"
-                                                                placeholder="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label>Country *</label>
-                                                            <select name="country" class="form-control" id="country">
-                                                                <option value="NG" selected="selected">Nigeria
-                                                                </option>
-                                                                <option value="NU">Niue</option>
-                                                                <option value="NF">Norfolk Island</option>
-                                                                <option value="KP">North Korea</option>
-                                                                <option value="MP">Northern Mariana Islands</option>
-                                                                <option value="NO">Norway</option>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-
-
-
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label>Registration No.</label>
-                                                            <input class="form-control" type="text" name="name"
-                                                                placeholder="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-
-                                                <ul class="list-inline ">
+                                                <ul class="list-inline buttons-form-section">
                                                     <li><button type="button"
-                                                            class="default-btn prev-step">Back</button></li>
-                                                    <li><button type="button"
-                                                            class="default-btn next-step skip-btn">Skip</button>
+                                                            class="default-btn prev-disabled disabled ">السابق</button>
                                                     </li>
-                                                    <li><button type="button"
-                                                            class="default-btn next-step">Continue</button></li>
-                                                </ul>
-                                            </div>
-                                            <div class="tab-pane" role="tabpanel" id="step3">
-                                                <h4 class="text-center">Step 3</h4>
-                                                <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label>Account Name *</label>
-                                                            <input class="form-control" type="text" name="name"
-                                                                placeholder="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label>Demo</label>
-                                                            <input class="form-control" type="text" name="name"
-                                                                placeholder="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label>Inout</label>
-                                                            <input class="form-control" type="text" name="name"
-                                                                placeholder="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label>Information</label>
-                                                            <div class="custom-file">
-                                                                <input type="file" class="custom-file-input"
-                                                                    id="customFile">
-                                                                <label class="custom-file-label" for="customFile">Select
-                                                                    file</label>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label>Number *</label>
-                                                            <input class="form-control" type="text" name="name"
-                                                                placeholder="">
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <div class="form-group">
-                                                            <label>Input Number</label>
-                                                            <input class="form-control" type="text" name="name"
-                                                                placeholder="">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <ul class="list-inline">
-                                                    <li><button type="button"
-                                                            class="default-btn prev-step">Back</button></li>
-                                                    <li><button type="button"
-                                                            class="default-btn next-step skip-btn">Skip</button>
+                                                    <li><button type="submit"
+                                                            class="default-btn next-step disabled step1">التالي</button>
                                                     </li>
-                                                    <li><button type="button"
-                                                            class="default-btn next-step">Continue</button></li>
                                                 </ul>
-                                            </div>
-                                            <div class="tab-pane" role="tabpanel" id="step4">
-                                                <h4 class="text-center">Step 4</h4>
-                                                <div class="all-info-container">
-                                                    <div class="list-content">
-                                                        <a href="#listone" data-toggle="collapse" aria-expanded="false"
-                                                            aria-controls="listone">Collapse 1
-                                                            <i class="fa fa-chevron-down"></i></a>
-                                                        <div class="collapse" id="listone">
-                                                            <div class="list-box">
-                                                                <div class="row">
-
-                                                                    <div class="col-md-6">
-                                                                        <div class="form-group">
-                                                                            <label>First and Last Name *</label>
-                                                                            <input class="form-control" type="text"
-                                                                                name="name" placeholder=""
-                                                                                disabled="disabled">
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="col-md-6">
-                                                                        <div class="form-group">
-                                                                            <label>Phone Number *</label>
-                                                                            <input class="form-control" type="text"
-                                                                                name="name" placeholder=""
-                                                                                disabled="disabled">
-                                                                        </div>
-                                                                    </div>
-
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="list-content">
-                                                        <a href="#listtwo" data-toggle="collapse" aria-expanded="false"
-                                                            aria-controls="listtwo">Collapse 2
-                                                            <i class="fa fa-chevron-down"></i></a>
-                                                        <div class="collapse" id="listtwo">
-                                                            <div class="list-box">
-                                                                <div class="row">
-
-                                                                    <div class="col-md-6">
-                                                                        <div class="form-group">
-                                                                            <label>Address 1 *</label>
-                                                                            <input class="form-control" type="text"
-                                                                                name="name" placeholder=""
-                                                                                disabled="disabled">
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <div class="col-md-6">
-                                                                        <div class="form-group">
-                                                                            <label>City / Town *</label>
-                                                                            <input class="form-control" type="text"
-                                                                                name="name" placeholder=""
-                                                                                disabled="disabled">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        <div class="form-group">
-                                                                            <label>Country *</label>
-                                                                            <select name="country2" class="form-control"
-                                                                                id="country2" disabled="disabled">
-                                                                                <option value="NG" selected="selected">
-                                                                                    Nigeria
-                                                                                </option>
-                                                                                <option value="NU">Niue</option>
-                                                                                <option value="NF">Norfolk Island
-                                                                                </option>
-                                                                                <option value="KP">North Korea
-                                                                                </option>
-                                                                                <option value="MP">Northern Mariana
-                                                                                    Islands</option>
-                                                                                <option value="NO">Norway</option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-
-
-
-                                                                    <div class="col-md-6">
-                                                                        <div class="form-group">
-                                                                            <label>Legal Form</label>
-                                                                            <select name="legalform2"
-                                                                                class="form-control" id="legalform2"
-                                                                                disabled="disabled">
-                                                                                <option value="" selected="selected">
-                                                                                    -Select an
-                                                                                    Answer-</option>
-                                                                                <option value="AG">Limited liability
-                                                                                    company</option>
-                                                                                <option value="GmbH">Public Company
-                                                                                </option>
-                                                                                <option value="GbR">No minimum
-                                                                                    capital, unlimited liability of
-                                                                                    partners, non-busines</option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        <div class="form-group">
-                                                                            <label>Business Registration No.</label>
-                                                                            <input class="form-control" type="text"
-                                                                                name="name" placeholder=""
-                                                                                disabled="disabled">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        <div class="form-group">
-                                                                            <label>Registered</label>
-                                                                            <select name="vat2" class="form-control"
-                                                                                id="vat2" disabled="disabled">
-                                                                                <option value="" selected="selected">
-                                                                                    -Select an
-                                                                                    Answer-</option>
-                                                                                <option value="yes">Yes</option>
-                                                                                <option value="no">No</option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-6">
-                                                                        <div class="form-group">
-                                                                            <label>Seller</label>
-                                                                            <input class="form-control" type="text"
-                                                                                name="name" placeholder=""
-                                                                                disabled="disabled">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-md-12">
-                                                                        <div class="form-group">
-                                                                            <label>Company Name *</label>
-                                                                            <input class="form-control" type="password"
-                                                                                name="name" placeholder=""
-                                                                                disabled="disabled">
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="list-content">
-                                                        <a href="#listthree" data-toggle="collapse"
-                                                            aria-expanded="false" aria-controls="listthree">Collapse
-                                                            3 <i class="fa fa-chevron-down"></i></a>
-                                                        <div class="collapse" id="listthree">
-                                                            <div class="list-box">
-                                                                <div class="row">
-
-                                                                    <div class="col-md-6">
-                                                                        <div class="form-group">
-                                                                            <label>Name *</label>
-                                                                            <input class="form-control" type="text"
-                                                                                name="name" placeholder="">
-                                                                        </div>
-                                                                    </div>
-
-
-                                                                    <div class="col-md-6">
-                                                                        <div class="form-group">
-                                                                            <label>Number *</label>
-                                                                            <input class="form-control" type="text"
-                                                                                name="name" placeholder="">
-                                                                        </div>
-                                                                    </div>
-
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <ul class="list-inline ">
-                                                    <li><button type="button"
-                                                            class="default-btn prev-step">Back</button></li>
-                                                    <li><button type="button"
-                                                            class="default-btn next-step">Finish</button></li>
-                                                </ul>
-                                            </div>
-                                            <div class="clearfix"></div>
+                                            </form>
                                         </div>
+                                        <div class="tab-pane " role="tabpanel" id="step2">
+                                            <form class="form-validate" novalidate>
+                                                <div class="form-section">
+                                                    <h5 class="bank">حسابك البنكي</h5>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="row">
+                                                                حسابك البنكي
+                                                            </div>
 
-                                    </form>
+                                                        </div>
+
+                                                        <div class="col-md-6">
+                                                            <img width="100%" src="assets/img/slider1-right.png" alt=""/>
+                                                        </div>
+
+
+
+                                                    </div>
+                                                </div>
+                                                <!-- Upload Documents Section -->
+                                                <ul class="list-inline buttons-form-section">
+                                                    <li><button type="button"
+                                                            class="default-btn prev-step">السابق</button>
+                                                    </li>
+                                                    <li><button type="submit"
+                                                            class="default-btn next-step step2 disabled">التالي</button>
+                                                    </li>
+                                                </ul>
+                                            </form>
+
+                                        </div>
+                                        <div class="tab-pane" role="tabpanel" id="step3">
+                                            <h4 class="text-center">Step 3</h4>
+                                            <form class="form-validate" novalidate>
+                                                <div class="form-section">
+                                                    <h5 class="bank">حسابك البنكي</h5>
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <label for="bank" class="form-label">البنك</label>
+                                                                    <div class="input-group">
+                                                                        <select
+                                                                            class="form-select form-control selectpicker"
+                                                                            required id="bank">
+                                                                            <option value="" selected>اختر البنك</option>
+                                                                            <option value="0">بنك الراجحي</option>
+                                                                            <option value="1">بنك السعوديه</option>
+                                                                        </select>
+                                                                        <div class="invalid-feedback">اختر البنك
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12">
+                                                                    <label for="bankNumber" class="form-label">رقم
+                                                                        الحساب</label>
+                                                                    <div class="input-group">
+                                                                        <input type="text" class="form-control"
+                                                                            id="bankNumber" required
+                                                                            placeholder="أدخل رقم الهوية">
+                                                                        <div class="invalid-feedback">أدخل رقم الحساب</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12">
+                                                                    <label for="bankiban" class="form-label">رقم
+                                                                        الايبان</label>
+                                                                    <div class="input-group">
+                                                                        <input type="text" class="form-control"
+                                                                            id="bankiban" required
+                                                                            placeholder="أدخل رقم الهوية">
+                                                                        <div class="invalid-feedback">أدخل رقم الايبان</div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-12">
+                                                                    <label for="personalDocument" class="form-label">تحميل
+                                                                        الملف</label>
+                                                                    <div class="file-upload-custom">
+                                                                        <div class="file-name" id="file-name">تحميل الملف
+                                                                        </div>
+                                                                        <label class="custom-file-upload">
+                                                                            <svg width="29" height="24" viewBox="0 0 29 24"
+                                                                                fill="none"
+                                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                                <path fill-rule="evenodd"
+                                                                                    clip-rule="evenodd"
+                                                                                    d="M15.7926 3.54466C12.5451 2.94671 9.56769 4.85737 8.97365 7.52448C8.84631 8.09618 8.33892 8.50285 7.75297 8.50285C5.14024 8.50285 3.12588 10.5065 3.12588 12.8778C3.12588 15.2351 5.15106 17.2528 7.76547 17.2528C8.45614 17.2528 9.01604 17.8125 9.01604 18.5028C9.01604 19.1932 8.45614 19.7528 7.76547 19.7528C3.87695 19.7528 0.624756 16.7206 0.624756 12.8778C0.624756 9.34338 3.3486 6.50904 6.80125 6.06378C8.1311 2.43833 12.2173 0.345042 16.2441 1.08574C20.0786 1.78216 22.9112 4.88836 22.8925 8.50468C25.9276 8.58151 28.3748 11.059 28.3748 14.1278C28.3748 17.2307 25.8515 19.7528 22.7472 19.7528H21.4967C20.806 19.7528 20.2461 19.1932 20.2461 18.5028C20.2461 17.8125 20.806 17.2528 21.4967 17.2528H22.7472C24.4701 17.2528 25.8736 15.85 25.8736 14.1278C25.8736 12.3955 24.4725 11.0028 22.7472 11.0028H21.4967C21.1165 11.0028 20.757 10.83 20.5197 10.5331C20.2823 10.2363 20.193 9.8476 20.2769 9.47697C20.8687 6.86297 19.0089 4.12821 15.7958 3.54525L15.7926 3.54466Z"
+                                                                                    fill="white" />
+                                                                                <path fill-rule="evenodd"
+                                                                                    clip-rule="evenodd"
+                                                                                    d="M13.134 10.119C13.6224 9.63081 14.4142 9.63081 14.9026 10.119L18.6543 13.869C19.1426 14.3571 19.1426 15.1486 18.6543 15.6367C18.1659 16.1249 17.3741 16.1249 16.8857 15.6367L14.0183 12.7706L11.1509 15.6367C10.6625 16.1249 9.87069 16.1249 9.38232 15.6367C8.89394 15.1486 8.89394 14.3571 9.38232 13.869L13.134 10.119Z"
+                                                                                    fill="white" />
+                                                                                <path fill-rule="evenodd"
+                                                                                    clip-rule="evenodd"
+                                                                                    d="M14.0183 9.75285C14.709 9.75285 15.2689 10.3125 15.2689 11.0028V22.2528C15.2689 22.9432 14.709 23.5028 14.0183 23.5028C13.3276 23.5028 12.7677 22.9432 12.7677 22.2528V11.0028C12.7677 10.3125 13.3276 9.75285 14.0183 9.75285Z"
+                                                                                    fill="white" />
+                                                                            </svg>
+                                                                            <input type="file" id="file-upload" multiple
+                                                                                required>
+    
+                                                                        </label>
+                                                                    </div>
+                                                                    <div class="invalid-feedback">حمل الملف</div>
+    
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+                                                        <div class="col-md-6">
+                                                            <img width="100%" src="assets/img/slider1-right.png" alt=""/>
+                                                        </div>
+
+
+
+                                                    </div>
+                                                </div>
+                                                <!-- Upload Documents Section -->
+                                                <ul class="list-inline buttons-form-section">
+                                                    <li><button type="button"
+                                                            class="default-btn prev-step">السابق</button>
+                                                    </li>
+                                                    <li><button type="submit"
+                                                            class="default-btn next-step step3 disabled">التالي</button>
+                                                    </li>
+                                                </ul>
+                                            </form>
+                                        </div>
+                                        <div class="tab-pane" role="tabpanel" id="step4">
+                                            <h4 class="text-center">Step 4</h4>
+                                            <div class="row">قمت بتسجيل حسابك بنجاح
+                                                مرحبا بك...</div>
+                                            <ul class="list-inline buttons-form-section">
+                                                <li><button type="button" class="default-btn prev-step ">السابق</button>
+                                                </li>
+                                                <li><button type="submit"
+                                                        class="default-btn next-step step4 ">إرسال</button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -566,6 +460,7 @@
         </div>
     </footer>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/forms.js"></script>
 </body>
 
 </html>

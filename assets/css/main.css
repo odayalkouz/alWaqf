@@ -1567,21 +1567,20 @@ footer .social-media-container a:hover {
 }
 
 
-.main-sub-content
-{
-    background-image: url(../img/bodyPatt.png),url(../img/bodypattbottom.png);
+.main-sub-content {
+    background-image: url(../img/bodyPatt.png), url(../img/bodypattbottom.png);
     background-color: var(--primary);
-    background-size: contain ,contain;
-    background-position: top,bottom ;
+    background-size: contain, contain;
+    background-position: top, bottom;
     background-repeat: no-repeat;
 }
 
-/* sugnup page (wizard) */
 .main-sub-content .sub-pages-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-flow: column;
+    width: 100%;
 }
 
 .main-sub-content .sub-pages-container h1 {
@@ -1618,6 +1617,7 @@ footer .social-media-container a:hover {
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
 
 .main-sub-content .wizard-header {
@@ -1628,46 +1628,62 @@ footer .social-media-container a:hover {
 }
 
 
-.main-sub-content .btn-upload {
-    background-color: #054c45;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.main-sub-content .btn-upload:hover {
-    background-color: #036a5b;
-}
-
-.main-sub-content .form-section {
-    margin-bottom: 20px;
-}
-
 .main-sub-content .form-section h5 {
-    font-size: 18px;
-    color: #054c45;
-    margin-bottom: 15px;
+    font-size: 16px;
+    color: var(--primary2);
+    font-weight: 700;
+    padding-right: 25px;
+    margin-bottom: 10px;
+    margin-top: 20px;
 }
 
+.main-sub-content .form-section h5.information {
+    background: url(../img/tick-circle.png) no-repeat;
+    background-size: contain;
+    background-position: 100% center;
+}
+.main-sub-content .form-section h5.bank {
+    background: url(../img/tick-circle.png) no-repeat;
+    background-size: contain;
+    background-position: 100% center;
+}
 
+.main-sub-content .form-section h5.changepassword {
+    background: url(../img/tick-circle.png) no-repeat;
+    background-size: contain;
+    background-position: 100% center;
+}
 
+.main-sub-content .form-section h5.profilepic {
+    background: url(../img/tick-circle.png) no-repeat;
+    background-size: contain;
+    background-position: 100% center;
+}
 
+.buttons-form-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    overflow: visible;
+}
 
 .main-sub-content .wizard .nav-tabs {
     position: relative;
     margin-bottom: 0;
     border-bottom-color: transparent;
-    display: flex
-;
+    display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 60px;
+    border-bottom: solid 1px #E1E1E6;
+    padding: 0;
+    padding-bottom: 30px;
 }
 
 .main-sub-content .wizard>div.wizard-inner {
     position: relative;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     text-align: center;
     margin-top: 30px;
 }
@@ -1687,27 +1703,24 @@ footer .social-media-container a:hover {
 .main-sub-content .wizard .nav-tabs>li.active>a,
 .main-sub-content .wizard .nav-tabs>li.active>a:hover,
 .main-sub-content .wizard .nav-tabs>li.active>a:focus {
-    color: #555555;
     cursor: default;
     border: 0;
     border-bottom-color: transparent;
 }
 
 .main-sub-content span.round-tab {
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
     line-height: 30px;
-    display: inline-block;
-    border-radius: 50%;
-    background: #fff;
-    z-index: 2;
-    position: absolute;
-    left: 0;
+    border-radius: 50px;
+    background: #7C7C8A;
+    color: var(--white) !important;
     text-align: center;
-    font-size: 16px;
+    font-size: 14px;
     color: #0e214b;
     font-weight: 500;
-    border: 1px solid #ddd;
+    margin: 0 10px;
+    line-height: 27px;
 }
 
 .main-sub-content span.round-tab i {
@@ -1715,9 +1728,8 @@ footer .social-media-container a:hover {
 }
 
 .main-sub-content .wizard li.active span.round-tab {
-    background: #0db02b;
+    background: var(--primary);
     color: #fff;
-    border-color: #0db02b;
 }
 
 .main-sub-content .wizard li.active span.round-tab i {
@@ -1725,11 +1737,51 @@ footer .social-media-container a:hover {
 }
 
 .main-sub-content .wizard .nav-tabs>li.active>a i {
-    color: #0db02b;
+    color: var(--primary);
 }
 
 .main-sub-content .wizard .nav-tabs>li {
-    width: 25%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    pointer-events: none;
+}
+
+.main-sub-content .wizard .nav-tabs>li::before {
+    content: '';
+    position: absolute;
+    left: -43px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 15px;
+    height: 15px;
+    background: var(--black) url(../img/arrow-right.svg);
+    background-position: center;
+    background-size: contain;
+}
+
+.main-sub-content .wizard .nav-tabs>li:last-child::before {
+    display: none;
+}
+.main-sub-content .wizard .nav-tabs>li:nth-child(3)::before {
+    display: none;
+}
+
+.main-sub-content .wizard .nav-tabs>li.active:first-child a span {
+    background: var(--buttonBg);
+}
+
+.main-sub-content .wizard .nav-tabs>li.previous a span {
+    background: var(--primary);
+}
+
+.main-sub-content .wizard .nav-tabs>li.previous a i {
+    color: var(--primary);
+}
+
+.main-sub-content .wizard .nav-tabs>li.active:first-child a i {
+    color: var(--black);
 }
 
 .main-sub-content .wizard li:after {
@@ -1749,22 +1801,18 @@ footer .social-media-container a:hover {
 .main-sub-content .wizard .nav-tabs>li a {
     position: relative;
     display: flex;
-    align-items: start;
+    align-items: center;
     justify-content: center;
 }
 
-/* .main-sub-content .wizard .nav-tabs>li a i {
-    position: absolute;
-    top: -15px;
-    font-style: normal;
-    font-weight: 400;
-    white-space: nowrap;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 12px;
+.main-sub-content .wizard .nav-tabs>li a i {
+
     font-weight: 700;
-    color: #000;
-} */
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--black);
+    font-style: normal;
+}
 
 .main-sub-content .wizard .nav-tabs>li a:hover {
     background: transparent;
@@ -1772,7 +1820,6 @@ footer .social-media-container a:hover {
 
 .main-sub-content .wizard .tab-pane {
     position: relative;
-    padding-top: 20px;
 }
 
 .main-sub-content .signup-step-container {
@@ -1782,20 +1829,40 @@ footer .social-media-container a:hover {
 
 .main-sub-content .prev-step,
 .main-sub-content .next-step {
-    font-size: 13px;
-    padding: 8px 24px;
+    padding: 12px 40px;
     border: none;
     border-radius: 4px;
-    margin-top: 30px;
+    margin-top: 0;
+    color: var(--black);
+    box-shadow: #047E73 0px 3px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.main-sub-content .prev-step:hover,
+.main-sub-content .next-step:hover {
+    opacity: 0.8;
+}
+
+.main-sub-content .prev-disabled {
+    padding: 12px 40px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 0;
+    background: #D6D6D6;
+    color: var(--black);
+    box-shadow: #9F9F9F 0px 3px;
+    font-size: 14px;
+    font-weight: 700;
 }
 
 .main-sub-content .next-step {
-    background-color: #0db02b;
+    background-color: var(--primary);
+    color: var(--white);
 }
 
-.main-sub-content .skip-btn {
-    background-color: #cec12d;
-}
 
 .main-sub-content .step-head {
     font-size: 20px;
@@ -1914,4 +1981,137 @@ footer .social-media-container a:hover {
 
 .main-sub-content .list-inline li {
     display: inline-block;
+}
+
+.file-upload-custom {
+    height: 60px !important;
+    border: solid 1px #E1E1E6;
+    box-shadow: 0 4px 4px #E1E1E6;
+    color: var(--black);
+    border-radius: 10px;
+    margin-bottom: 5px;
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.file-upload-custom input[type="file"] {
+    display: none;
+}
+
+/* Style the custom upload button */
+.file-upload-custom .custom-file-upload {
+    display: flex;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: var(--primary);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0 !important;
+    height: 100%;
+    transition: var(--transition);
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px 0 0 10px;
+}
+
+.file-upload-custom .custom-file-upload:hover {
+    opacity: 0.8;
+}
+
+/* Display the file name after selection */
+.file-upload-custom .file-name {
+    font-size: 14px;
+    color: #333;
+    padding-right: 12px;
+}
+
+.phonenumber-custom {
+    position: relative;
+}
+
+.phonenumber-custom span {
+    position: absolute;
+    width: 100px;
+    height: 60px;
+    left: 0;
+    top: 0;
+    background: #E0E0E0;
+    color: var(--primary);
+    z-index: 4;
+    text-align: center;
+    padding: 0 30px;
+    border-radius: 10px;
+}
+
+.main-sub-content .form-section {
+    margin-bottom: 30px;
+    border-bottom: solid 1px #E1E1E6;
+    padding-bottom: 30px;
+}
+
+.main-sub-content .form-section label {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--black);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.main-sub-content .form-section input[type="text"],
+.main-sub-content .form-section input[type="password"],
+.main-sub-content .form-section input[type="date"],
+.main-sub-content .form-section input[type="email"],
+.main-sub-content .form-section input[type="file"],
+.main-sub-content .form-section select {
+    height: 60px !important;
+    border: solid 1px #E1E1E6;
+    box-shadow: 0 4px 4px #e1e1e680;
+    color: var(--black);
+    border-radius: 10px;
+    margin-bottom: 0px;
+}
+
+.main-sub-content .form-section input[type="text"]::placeholder,
+.main-sub-content .form-section input[type="password"]::placeholder,
+.main-sub-content .form-section input[type="date"]::placeholder,
+.main-sub-content .form-section input[type="email"]::placeholder,
+.main-sub-content .form-section input[type="file"]::placeholder,
+.main-sub-content .form-section select::placeholder {
+    color: #7c7c8a87;
+}
+
+
+.selectpicker {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url('../img/tick-circle.png');
+    background-position: 12px center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+}
+
+.custom-select.is-invalid, .form-control.is-invalid, .was-validated .custom-select:invalid, .was-validated .form-control:invalid,
+.custom-select.is-invalid:focus, .form-control.is-invalid:focus, .was-validated .custom-select:invalid:focus, .was-validated .form-control:invalid:focus
+{
+    border: solid 1px #E1E1E6;
+    box-shadow: 0 4px 4px #e1e1e680;
+}
+
+button.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+.invalid-feedback {
+    height: 20px;
+    margin-top: 0;
+}
+.input-group {
+    min-height: 90px;
 }
