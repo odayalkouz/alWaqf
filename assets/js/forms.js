@@ -182,3 +182,17 @@ function validateForm(form) {
 
     return isValid;
 }
+
+if ($('.datepicker'))
+    $('.datepicker').datepicker({
+        format: 'dd-mm-yyyy',       // Change date format
+        autoclose: true,            // Close picker automatically after selection
+        todayHighlight: true,       // Highlight today's date
+        startDate: new Date(),      // Disable past dates
+        // endDate: '+1y',             // Limit to the next 1 year
+        daysOfWeekDisabled: [0, 6], // Disable weekends (Sunday = 0, Saturday = 6)
+        calendarWeeks: true,        // Show week numbers
+        clearBtn: true,             // Add a clear button
+        disableTouchKeyboard: true, // Disable touch keyboard on mobile devices
+        
+    });

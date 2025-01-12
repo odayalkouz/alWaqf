@@ -32,12 +32,12 @@ sliderData.forEach((slide) => {
 
     slideElement.innerHTML = `
     <div class="row w-100 align-items-center">
-      <div class="col-12 col-md-6 my-sm-4 my-md-4">
+      <div class="col-12 col-md-5 my-sm-4 my-md-4">
         <div class="left">
           <img class="w-75" src="${slide.image}" data-swiper-parallax="-150" alt="Logo">
         </div>
       </div>
-      <div class="col-12 col-md-6 my-sm-4 my-md-4">
+      <div class="col-12 col-md-7 my-sm-4 my-md-4">
         <div class="right">
           <div class="title" data-swiper-parallax="-300">${slide.title}</div>
           <div class="text" data-swiper-parallax="-300">
@@ -59,6 +59,9 @@ var swiper = new Swiper(".mySwiper", {
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
+    },
+    autoplay: {
+        delay: 3000,
     },
 });
 
@@ -115,6 +118,9 @@ var swiper = new Swiper(".mySwiper1", {
         el: ".swiper-pagination",
         clickable: true,
     },
+    autoplay: {
+        delay: 3000,
+    },
     breakpoints: {
         "@0.00": {
             slidesPerView: 1,
@@ -144,6 +150,9 @@ var swiper = new Swiper(".newsSwiper", {
         el: ".swiper-pagination",
         clickable: true,
     },
+    autoplay: {
+        delay: 3000,
+    },
     breakpoints: {
         "@0.00": {
             slidesPerView: 1,
@@ -169,10 +178,9 @@ var swiper = new Swiper(".newsSwiper", {
 var swiper = new Swiper(".partnersSwiper", {
     slidesPerView: 3,
     spaceBetween: 10,
-    // pagination: {
-    //     el: ".swiper-pagination",
-    //     clickable: true,
-    // },
+    autoplay: {
+        delay: 3000,
+    },
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
@@ -205,6 +213,9 @@ var swiper = new Swiper(".WhatClienSay", {
     pagination: {
         el: ".swiper-pagination",
         clickable: true,
+    },
+    autoplay: {
+        delay: 3000,
     },
     breakpoints: {
         "@0.00": {

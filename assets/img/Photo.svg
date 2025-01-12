@@ -1,0 +1,12 @@
+<svg width="268" height="268" viewBox="0 0 268 268" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="134" cy="134" r="133.5" stroke="#058F82" stroke-opacity="0.5" stroke-dasharray="6 6"/>
+<circle cx="134" cy="134" r="120.363" stroke="#058F82" stroke-opacity="0.4" stroke-dasharray="6 6"/>
+<circle cx="134.001" cy="134" r="105.912" stroke="#058F82" stroke-opacity="0.2" stroke-dasharray="6 6"/>
+<mask id="mask0_211_16139" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="42" y="42" width="184" height="184">
+<circle cx="133.999" cy="134.001" r="91.9608" fill="#C4C4C4"/>
+</mask>
+<g mask="url(#mask0_211_16139)">
+<circle cx="133.999" cy="134.001" r="91.9608" fill="#058F82" fill-opacity="0.2"/>
+</g>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M169.133 109.503C170.937 111.4 170.85 114.385 168.938 116.169L119.423 162.374C118.437 163.295 117.101 163.754 115.749 163.637C114.398 163.52 113.16 162.838 112.347 161.762L96.0103 140.152C94.433 138.066 94.8597 135.111 96.9635 133.552C99.0673 131.993 102.051 132.42 103.629 134.507L116.766 151.885L162.402 109.299C164.315 107.514 167.328 107.606 169.133 109.503Z" fill="#058F82"/>
+</svg>

@@ -38,7 +38,10 @@ header {
     box-shadow: #00000033 0px 25px 20px -20px;
     background: var(--primary);
 }
-
+header .dropdown-menu {
+    left: auto;
+    right: 20px;
+}
 header .social-media-container {
     height: 45px;
 }
@@ -1116,7 +1119,6 @@ footer .left-content {
     background: rgba(0, 0, 0, 0.3);
     padding-right: 0;
     padding-top: 30px;
-
 }
 
 footer .right-content {
@@ -1124,7 +1126,6 @@ footer .right-content {
     align-items: center;
     justify-content: center;
     flex-flow: column;
-
 }
 
 footer .footer-links {
@@ -1140,7 +1141,7 @@ footer .list-unstyled {
 }
 
 footer .list-unstyled a {
-    padding-right: 30px;
+    padding-right: 20px;
     background: url(../img/footertick.png) no-repeat;
     background-position: 100% center;
     background-size: 5%;
@@ -1166,10 +1167,13 @@ footer .list-unstyled a {
 .footer-bottom p {
     margin: 0;
     padding: 7px 0;
+    font-size: 14px;
+    font-weight: 400;
 }
 
 footer .logo img {
-    max-width: 120px;
+    max-width: 160px;
+    object-fit: contain;
 }
 
 footer .social-media-container {
@@ -1211,7 +1215,6 @@ footer .social-media-container a.tw {
 footer .social-media-container a:hover {
     opacity: 0.8;
 }
-
 
 .animate-on-scroll {
     opacity: 0;
@@ -1632,30 +1635,36 @@ footer .social-media-container a:hover {
     font-size: 16px;
     color: var(--primary2);
     font-weight: 700;
-    padding-right: 25px;
+    padding-right: 30px;
     margin-bottom: 10px;
     margin-top: 20px;
 }
 
 .main-sub-content .form-section h5.information {
-    background: url(../img/tick-circle.png) no-repeat;
+    background: url(../img/id-card-fill.svg) no-repeat;
     background-size: contain;
     background-position: 100% center;
 }
+
 .main-sub-content .form-section h5.bank {
-    background: url(../img/tick-circle.png) no-repeat;
+    background: url(../img/bank-fill.svg) no-repeat;
+    background-size: contain;
+    background-position: 100% center;
+}
+.main-sub-content .form-section h5.location {
+    background: url(../img/map-pin-add-fill.svg) no-repeat;
     background-size: contain;
     background-position: 100% center;
 }
 
 .main-sub-content .form-section h5.changepassword {
-    background: url(../img/tick-circle.png) no-repeat;
+    background: url(../img/lock-password-fill.svg) no-repeat;
     background-size: contain;
     background-position: 100% center;
 }
 
 .main-sub-content .form-section h5.profilepic {
-    background: url(../img/tick-circle.png) no-repeat;
+    background: url(../img/image-ai-fill.svg) no-repeat;
     background-size: contain;
     background-position: 100% center;
 }
@@ -1666,6 +1675,10 @@ footer .social-media-container a:hover {
     justify-content: center;
     gap: 20px;
     overflow: visible;
+}
+
+.wizard {
+    width: 100%;
 }
 
 .main-sub-content .wizard .nav-tabs {
@@ -1713,12 +1726,12 @@ footer .social-media-container a:hover {
     height: 28px;
     line-height: 30px;
     border-radius: 50px;
-    background: #7C7C8A;
-    color: var(--white) !important;
+    background: #E1E1E6;
+    color: var(--white);
     text-align: center;
     font-size: 14px;
     color: #0e214b;
-    font-weight: 500;
+    font-weight: 700;
     margin: 0 10px;
     line-height: 27px;
 }
@@ -1750,13 +1763,13 @@ footer .social-media-container a:hover {
 .main-sub-content .wizard .nav-tabs>li::before {
     content: '';
     position: absolute;
-    left: -43px;
+    left: -50px;
     top: 0;
     bottom: 0;
     margin: auto;
-    width: 15px;
-    height: 15px;
-    background: var(--black) url(../img/arrow-right.svg);
+    width: 20px;
+    height: 20px;
+    background: url(../img/icons-step.svg);
     background-position: center;
     background-size: contain;
 }
@@ -1764,16 +1777,22 @@ footer .social-media-container a:hover {
 .main-sub-content .wizard .nav-tabs>li:last-child::before {
     display: none;
 }
+
 .main-sub-content .wizard .nav-tabs>li:nth-child(3)::before {
     display: none;
 }
 
-.main-sub-content .wizard .nav-tabs>li.active:first-child a span {
+.main-sub-content .wizard .nav-tabs>li.active a span {
     background: var(--buttonBg);
+}
+
+.main-sub-content .wizard .nav-tabs>li.active a i {
+    color: var(--black);
 }
 
 .main-sub-content .wizard .nav-tabs>li.previous a span {
     background: var(--primary);
+    color: var(--white);
 }
 
 .main-sub-content .wizard .nav-tabs>li.previous a i {
@@ -1782,6 +1801,15 @@ footer .social-media-container a:hover {
 
 .main-sub-content .wizard .nav-tabs>li.active:first-child a i {
     color: var(--black);
+}
+.main-sub-content .bank-note {
+    margin-top: 30px;
+    background: url(../img/new_releases.svg) no-repeat;
+    background-position: 100% center;
+    background-size: 10.5%;
+    padding-right: 30px;
+    font-size: 14px;
+    font-weight: 400;
 }
 
 .main-sub-content .wizard li:after {
@@ -1827,11 +1855,23 @@ footer .social-media-container a:hover {
     text-align: start;
 }
 
-.main-sub-content .prev-step,
+.main-sub-content .prev-step
+ {
+    padding: 12px 40px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 0;
+    color: var(--black);
+    box-shadow: #9F9F9F 0px 3px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+}
 .main-sub-content .next-step {
     padding: 12px 40px;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     margin-top: 0;
     color: var(--black);
     box-shadow: #047E73 0px 3px;
@@ -2046,8 +2086,11 @@ footer .social-media-container a:hover {
     color: var(--primary);
     z-index: 4;
     text-align: center;
-    padding: 0 30px;
+    padding: 0 20px;
     border-radius: 10px;
+
+    font-size: 22px;
+    font-weight: 700;
 }
 
 .main-sub-content .form-section {
@@ -2074,7 +2117,7 @@ footer .social-media-container a:hover {
     border: solid 1px #E1E1E6;
     box-shadow: 0 4px 4px #e1e1e680;
     color: var(--black);
-    border-radius: 10px;
+    border-radius: 10px !important;
     margin-bottom: 0px;
 }
 
@@ -2091,15 +2134,119 @@ footer .social-media-container a:hover {
 .selectpicker {
     appearance: none;
     -webkit-appearance: none;
-    background-image: url('../img/tick-circle.png');
-    background-position: 12px center;
+    background-image: url('../img/Caret-right.png');
+    background-position: 15px center;
     background-repeat: no-repeat;
-    background-size: 16px;
+    background-size: 30px;
+}
+input.datepicker {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url('../img/calendar_today.svg');
+    background-position: 15px center;
+    background-repeat: no-repeat;
+    background-size: 25px;
+    text-align: right;
+    padding-right: 12px;
+}
+.datepicker-dropdown {
+    width: 300px;
+}
+.datepicker-dropdown table {
+    width: 100%;
+}
+.datepicker table tr td.day.focused, .datepicker table tr td.day:hover{
+    background: var(--primary) !important;
+    color: #FFF !important;
+    border-radius: 50px;
+}
+.datepicker table tr td.day{
+    border-radius: 50px;
+}
+.datepicker table tr td.active.active, .datepicker table tr td.active.disabled, .datepicker table tr td.active.disabled.active, .datepicker table tr td.active.disabled.disabled, .datepicker table tr td.active.disabled:active, .datepicker table tr td.active.disabled:hover, .datepicker table tr td.active.disabled:hover.active, .datepicker table tr td.active.disabled:hover.disabled, .datepicker table tr td.active.disabled:hover:active, .datepicker table tr td.active.disabled:hover:hover, .datepicker table tr td.active.disabled:hover[disabled], .datepicker table tr td.active.disabled[disabled], .datepicker table tr td.active:active, .datepicker table tr td.active:hover, .datepicker table tr td.active:hover.active, .datepicker table tr td.active:hover.disabled, .datepicker table tr td.active:hover:active, .datepicker table tr td.active:hover:hover, .datepicker table tr td.active:hover[disabled], .datepicker table tr td.active[disabled] {
+    background-color:var(--primary) !important;
+    color:var(--white)!important;
+    background-image: none !important;
 }
 
-.custom-select.is-invalid, .form-control.is-invalid, .was-validated .custom-select:invalid, .was-validated .form-control:invalid,
-.custom-select.is-invalid:focus, .form-control.is-invalid:focus, .was-validated .custom-select:invalid:focus, .was-validated .form-control:invalid:focus
-{
+
+.datepicker table tr {
+    height: 40px;
+  }
+  
+  .datepicker th {
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #6c757d;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f1f1f1;
+  }
+  
+  .datepicker td {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 50%;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+
+  /* Styling for Today's Date */
+  .datepicker .today {
+    background-color: var(--primary);
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+  }
+  
+  /* Styling for Selected Date */
+  .datepicker .active {
+    background-color: var(--secondary);
+    color: white;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Highlight Weekends */
+  .datepicker .dow:nth-child(1),
+  .datepicker .dow:nth-child(7) {
+    color: var(--primary); /* Red for weekends */
+    font-weight: bold;
+  }
+  
+
+  .datepicker tfoot tr:first-child{
+    display: none;
+  }
+
+  /* Clear Button Styling */
+  .datepicker .clear {
+    background-color: var(--primary);
+    color: #6c757d;
+    border-radius: 8px;
+    padding: 5px 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    text-align: center;
+    color: var(--white);
+  }
+  
+  .datepicker .clear:hover {
+    background-color: var(--primary);
+    color: var(--white);
+  }
+
+
+
+.custom-select.is-invalid,
+.form-control.is-invalid,
+.was-validated .custom-select:invalid,
+.was-validated .form-control:invalid,
+.custom-select.is-invalid:focus,
+.form-control.is-invalid:focus,
+.was-validated .custom-select:invalid:focus,
+.was-validated .form-control:invalid:focus {
     border: solid 1px #E1E1E6;
     box-shadow: 0 4px 4px #e1e1e680;
 }
@@ -2108,10 +2255,104 @@ button.disabled {
     opacity: 0.4;
     pointer-events: none;
 }
+
 .invalid-feedback {
     height: 20px;
     margin-top: 0;
 }
+
 .input-group {
     min-height: 90px;
+}
+
+.signup-sucess-contaoner {
+    background: var(--sliverbg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    width: 50%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    padding-bottom: 40px;
+    position: relative;
+    border-radius: 20px;
+}
+
+.signup-sucess-contaoner img {
+    object-fit: contain;
+    width: 70%;
+    height: 240px;
+    margin: 40px 0 0 0;
+}
+
+.signup-sucess-contaoner h4 {
+    font-size: 25px;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 30px 0 30px 0;
+}
+
+.signup-sucess-contaoner a {
+    
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 180px;
+}
+
+.btn-primary{
+    background: var(--primary);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--white) !important;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 0;
+    color: var(--black);
+    box-shadow: #047E73 0px 3px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    outline: none;
+}
+
+.btn-primary:hover,.btn-primary:focus{
+    background: var(--primary)!important;
+    color: var(--white) !important;
+    opacity: 0.8!important;
+    border-radius: 8px !important;
+    box-shadow: #047E73 0px 3px!important;
+    outline: none;
+
+
+}
+.btn-secondary{
+    padding: 12px 40px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 0;
+    color: var(--black);
+    box-shadow: #9F9F9F 0px 3px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    background: rgb(240, 240, 240);
+    outline: none;
+
+}
+
+.btn-secondary:hover,btn-secondary:focus {
+    background: rgb(240, 240, 240) !important;
+    color: var(--black)!important;
+    opacity: 0.8;
+    border-radius: 8px!important;
+    box-shadow: #9F9F9F 0px 3px!important;
+    outline: none;
 }
