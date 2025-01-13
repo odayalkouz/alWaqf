@@ -38,10 +38,12 @@ header {
     box-shadow: #00000033 0px 25px 20px -20px;
     background: var(--primary);
 }
+
 header .dropdown-menu {
     left: auto;
     right: 20px;
 }
+
 header .social-media-container {
     height: 45px;
 }
@@ -59,6 +61,10 @@ header .dropdown-menu .dropdown-item {
     color: #333;
     transition: background-color 0.3s ease, color 0.3s ease;
     border-bottom: solid 1px #bc9c53;
+}
+header .dropdown-menu .dropdown-item:nth-child(2) {
+   
+    border-bottom: 0;
 }
 
 header .dropdown-menu .dropdown-item:hover {
@@ -94,8 +100,8 @@ header .btn-dropdown {
 header .navbar-nav .dropdown-menu {
     padding: 0;
     text-align: start;
+    transition: all 0.5s;
 }
-
 header .btn-dropdown:hover {
     background-color: #055a58;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
@@ -177,7 +183,11 @@ header .social-media-container a:hover {
     transition: var(--transition);
 
 }
+.login-button.active {
+    background: var(--secondary);   
+     box-shadow: #977a38 0px 3px;
 
+}
 .login-button:hover {
     color: var(--white);
     opacity: 0.8;
@@ -536,8 +546,8 @@ section {
 
 .goals-container .goals-left-content i button,
 .goals-container .goals-left-content i button:focus,
-.btn-primary:not(:disabled):not(.disabled).active,
-.btn-primary:not(:disabled):not(.disabled):active,
+/* .btn-primary:not(:disabled):not(.disabled).active, */
+/* .btn-primary:not(:disabled):not(.disabled):active, */
 .show>.btn-primary.dropdown-toggle {
     width: 100%;
     height: 100%;
@@ -547,6 +557,7 @@ section {
     box-shadow: none;
     border-radius: 50px;
     border: 0;
+    cursor: pointer;
 
 }
 
@@ -800,7 +811,7 @@ section {
     position: relative;
     width: 100%;
     height: 100%;
-    max-height: 200px;
+    max-height: 182px;
     object-fit: cover;
 }
 
@@ -857,7 +868,7 @@ section {
     justify-content: start;
     text-align: start;
     display: flex;
-    margin: 0 5px 10px 5px;
+    margin: 0 5px 5px 5px;
     ;
 }
 
@@ -889,7 +900,7 @@ section {
     line-height: 25px;
     text-align: start;
     border-bottom: solid 1px #E0E0E0;
-    padding: 0px 0 15px 0;
+    padding: 0px 0 10px 0;
 }
 
 .news-container .news-left-content .swiper-slide .swiper-slide-item .white-text-container p {
@@ -1651,6 +1662,7 @@ footer .social-media-container a:hover {
     background-size: contain;
     background-position: 100% center;
 }
+
 .main-sub-content .form-section h5.location {
     background: url(../img/map-pin-add-fill.svg) no-repeat;
     background-size: contain;
@@ -1802,6 +1814,7 @@ footer .social-media-container a:hover {
 .main-sub-content .wizard .nav-tabs>li.active:first-child a i {
     color: var(--black);
 }
+
 .main-sub-content .bank-note {
     margin-top: 30px;
     background: url(../img/new_releases.svg) no-repeat;
@@ -1855,8 +1868,7 @@ footer .social-media-container a:hover {
     text-align: start;
 }
 
-.main-sub-content .prev-step
- {
+.main-sub-content .prev-step {
     padding: 12px 40px;
     border: none;
     border-radius: 8px;
@@ -1868,6 +1880,7 @@ footer .social-media-container a:hover {
     cursor: pointer;
     transition: var(--transition);
 }
+
 .main-sub-content .next-step {
     padding: 12px 40px;
     border: none;
@@ -2086,10 +2099,9 @@ footer .social-media-container a:hover {
     color: var(--primary);
     z-index: 4;
     text-align: center;
-    padding: 0 20px;
+    padding: 0 27px;
     border-radius: 10px;
-
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 700;
 }
 
@@ -2139,6 +2151,7 @@ footer .social-media-container a:hover {
     background-repeat: no-repeat;
     background-size: 30px;
 }
+
 input.datepicker {
     appearance: none;
     -webkit-appearance: none;
@@ -2149,79 +2162,105 @@ input.datepicker {
     text-align: right;
     padding-right: 12px;
 }
+
 .datepicker-dropdown {
     width: 300px;
 }
+
 .datepicker-dropdown table {
     width: 100%;
 }
-.datepicker table tr td.day.focused, .datepicker table tr td.day:hover{
+
+.datepicker table tr td.day.focused,
+.datepicker table tr td.day:hover {
     background: var(--primary) !important;
     color: #FFF !important;
     border-radius: 50px;
 }
-.datepicker table tr td.day{
+
+.datepicker table tr td.day {
     border-radius: 50px;
 }
-.datepicker table tr td.active.active, .datepicker table tr td.active.disabled, .datepicker table tr td.active.disabled.active, .datepicker table tr td.active.disabled.disabled, .datepicker table tr td.active.disabled:active, .datepicker table tr td.active.disabled:hover, .datepicker table tr td.active.disabled:hover.active, .datepicker table tr td.active.disabled:hover.disabled, .datepicker table tr td.active.disabled:hover:active, .datepicker table tr td.active.disabled:hover:hover, .datepicker table tr td.active.disabled:hover[disabled], .datepicker table tr td.active.disabled[disabled], .datepicker table tr td.active:active, .datepicker table tr td.active:hover, .datepicker table tr td.active:hover.active, .datepicker table tr td.active:hover.disabled, .datepicker table tr td.active:hover:active, .datepicker table tr td.active:hover:hover, .datepicker table tr td.active:hover[disabled], .datepicker table tr td.active[disabled] {
-    background-color:var(--primary) !important;
-    color:var(--white)!important;
+
+.datepicker table tr td.active.active,
+.datepicker table tr td.active.disabled,
+.datepicker table tr td.active.disabled.active,
+.datepicker table tr td.active.disabled.disabled,
+.datepicker table tr td.active.disabled:active,
+.datepicker table tr td.active.disabled:hover,
+.datepicker table tr td.active.disabled:hover.active,
+.datepicker table tr td.active.disabled:hover.disabled,
+.datepicker table tr td.active.disabled:hover:active,
+.datepicker table tr td.active.disabled:hover:hover,
+.datepicker table tr td.active.disabled:hover[disabled],
+.datepicker table tr td.active.disabled[disabled],
+.datepicker table tr td.active:active,
+.datepicker table tr td.active:hover,
+.datepicker table tr td.active:hover.active,
+.datepicker table tr td.active:hover.disabled,
+.datepicker table tr td.active:hover:active,
+.datepicker table tr td.active:hover:hover,
+.datepicker table tr td.active:hover[disabled],
+.datepicker table tr td.active[disabled] {
+    background-color: var(--primary) !important;
+    color: var(--white) !important;
     background-image: none !important;
 }
 
 
 .datepicker table tr {
     height: 40px;
-  }
-  
-  .datepicker th {
+}
+
+.datepicker th {
     text-transform: uppercase;
     font-size: 12px;
     color: #6c757d;
     padding-bottom: 10px;
     border-bottom: 1px solid #f1f1f1;
-  }
-  
-  .datepicker td {
+}
+
+.datepicker td {
     width: 40px;
     height: 40px;
     text-align: center;
     vertical-align: middle;
     border-radius: 50%;
     transition: background-color 0.3s, color 0.3s;
-  }
-  
+}
 
-  /* Styling for Today's Date */
-  .datepicker .today {
+
+/* Styling for Today's Date */
+.datepicker .today {
     background-color: var(--primary);
     color: white;
     border-radius: 50%;
     font-weight: bold;
-  }
-  
-  /* Styling for Selected Date */
-  .datepicker .active {
+}
+
+/* Styling for Selected Date */
+.datepicker .active {
     background-color: var(--secondary);
     color: white;
     border-radius: 50%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Highlight Weekends */
-  .datepicker .dow:nth-child(1),
-  .datepicker .dow:nth-child(7) {
-    color: var(--primary); /* Red for weekends */
+}
+
+/* Highlight Weekends */
+.datepicker .dow:nth-child(1),
+.datepicker .dow:nth-child(7) {
+    color: var(--primary);
+    /* Red for weekends */
     font-weight: bold;
-  }
-  
+}
 
-  .datepicker tfoot tr:first-child{
+
+.datepicker tfoot tr:first-child {
     display: none;
-  }
+}
 
-  /* Clear Button Styling */
-  .datepicker .clear {
+/* Clear Button Styling */
+.datepicker .clear {
     background-color: var(--primary);
     color: #6c757d;
     border-radius: 8px;
@@ -2230,12 +2269,12 @@ input.datepicker {
     cursor: pointer;
     text-align: center;
     color: var(--white);
-  }
-  
-  .datepicker .clear:hover {
+}
+
+.datepicker .clear:hover {
     background-color: var(--primary);
     color: var(--white);
-  }
+}
 
 
 
@@ -2295,7 +2334,7 @@ button.disabled {
 }
 
 .signup-sucess-contaoner a {
-    
+
     position: absolute;
     bottom: -20px;
     left: 0;
@@ -2304,7 +2343,7 @@ button.disabled {
     width: 180px;
 }
 
-.btn-primary{
+.btn-primary {
     background: var(--primary);
     font-size: 16px;
     font-weight: 700;
@@ -2322,17 +2361,19 @@ button.disabled {
     outline: none;
 }
 
-.btn-primary:hover,.btn-primary:focus{
-    background: var(--primary)!important;
+.btn-primary:hover,
+.btn-primary:focus {
+    background: var(--primary) !important;
     color: var(--white) !important;
-    opacity: 0.8!important;
+    opacity: 0.8 !important;
     border-radius: 8px !important;
-    box-shadow: #047E73 0px 3px!important;
+    box-shadow: #047E73 0px 3px !important;
     outline: none;
 
 
 }
-.btn-secondary{
+
+.btn-secondary {
     padding: 12px 40px;
     border: none;
     border-radius: 8px;
@@ -2348,11 +2389,154 @@ button.disabled {
 
 }
 
-.btn-secondary:hover,btn-secondary:focus {
+.btn-secondary:hover,
+btn-secondary:focus {
     background: rgb(240, 240, 240) !important;
-    color: var(--black)!important;
+    color: var(--black) !important;
     opacity: 0.8;
-    border-radius: 8px!important;
-    box-shadow: #9F9F9F 0px 3px!important;
+    border-radius: 8px !important;
+    box-shadow: #9F9F9F 0px 3px !important;
     outline: none;
+}
+
+
+.custom-checkbox.horizental,
+.custom-radio.horizental {
+    display: flex;
+    flex-flow: row;
+    padding-right: 0;
+}
+.custom-checkbox.vertical ,
+.custom-radio.vertical {
+    display: flex;
+    flex-flow: column;
+    padding-right: 0;
+}
+
+.custom-checkbox input[type="checkbox"],
+.custom-radio input[type="radio"] {
+    display: none;
+}
+
+.custom-checkbox.vertical label,
+.custom-radio,.vertical label {
+    position: relative;
+    padding-right: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
+    margin-bottom: 5px !important;
+    margin-top: 5px !important;
+
+}
+.custom-checkbox.horizental label,
+.custom-radio.horizental label {
+    position: relative;
+    padding-right: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
+    margin-bottom: 5px !important;
+    margin-top: 5px !important;
+    margin-left: 10px;
+
+}
+
+.custom-checkbox label::before,
+.custom-radio label::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 4px;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary);
+    border-radius: 4px;
+    background: #fff;
+}
+
+.custom-radio label::before {
+    border-radius: 50%;
+}
+
+.custom-checkbox input[type="checkbox"]:checked+label::before {
+    background: url(../img/icons.png) var(--primary);
+    border-color: var(--primary);
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.custom-radio input[type="radio"]:checked+label::before {
+    background: url(../img/icons.png) var(--primary);
+    border-color: var(--primary);
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.custom-checkbox label::after,
+.custom-radio label::after {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 4px;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+    display: none;
+    display: none;
+}
+/* 
+.custom-checkbox input[type="checkbox"]:checked+label::after {
+    display: block;
+} */
+/* 
+.custom-radio input[type="radio"]:checked+label::after {
+    display: block;
+} */
+
+
+
+
+.table-advanced {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 4px #e1e1e680;
+    text-align: right;
+}
+
+.table-advanced thead th {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.table-advanced th,
+.table-advanced td {
+    padding: 10px;
+}
+
+.table-advanced thead {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.table-advanced tbody tr:nth-child(even) {
+    background-color: #fff;
+}
+.table-advanced tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.table-advanced tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.table-advanced tbody tr td button {
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 14px;
 }

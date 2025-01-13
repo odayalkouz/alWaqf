@@ -94,7 +94,7 @@ function validateForm(form) {
             }
         } else {
             input.classList.remove('is-invalid');
-            $(".file-upload-custom").next().hide();
+            // $(".file-upload-custom").next().hide();
             if (input.nextElementSibling) {
                 input.nextElementSibling.textContent = '';
             }
@@ -115,20 +115,25 @@ function validateForm(form) {
     });
 
     // (text, email, etc)
-    const otherInputs = form.querySelectorAll('input:not([type="file"]), textarea');
+    const otherInputs = form.querySelectorAll('input:not([type="file"]):not([type="checkbox"]):not([type="radio"]), textarea');
     otherInputs.forEach(input => {
         if (input.hasAttribute('required') && input.value.trim() === '') {
             isValid = false;
             input.classList.add('is-invalid');
-            input.nextElementSibling.textContent = 'هذا الحقل مطلوب.';
+            if (input.nextElementSibling) {
+                input.nextElementSibling.textContent = 'هذا الحقل مطلوب.';
+            }
         } else {
             input.classList.remove('is-invalid');
-            input.nextElementSibling.textContent = '';
+            if (input.nextElementSibling) {
+                input.nextElementSibling.textContent = '';
+            }
         }
     });
+    
 
     // mobile Number
-    const mobileInput = form.querySelector('.mobileNumber');
+    const mobileInput = form.querySelector('.Number');
     if (mobileInput) {
         if (!/^\d+$/.test(mobileInput.value)) {
             isValid = false;
