@@ -25,6 +25,24 @@
 </head>
 
 <body class="pattern-bg">
+    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="ratio ratio-16x9">
+                        <img id="modalImage" src="" class="img-fluid" alt="Preview Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <header>
         <div class="container">
             <div
@@ -152,7 +170,7 @@
                                                             <label for="birthDate" class="form-label">تاريخ
                                                                 الميلاد</label>
                                                             <div class="input-group">
-                                                                <input type="text"  class="form-control datepicker" id="birthDate"
+                                                                <input type="text" placeholder="أدخل تاريخ ميلادك"  class="form-control datepicker" id="birthDate"
                                                                     required>
                                                                 <div class="invalid-feedback">ادخل تاريخ الميلاد</div>
                                                             </div>
@@ -199,17 +217,18 @@
                                                             <label for="newPassword" class="form-label">كلمة المرور
                                                                 الجديدة</label>
                                                             <div class="input-group">
-                                                                <input type="password" name="password"
+                                                                <input type="password" name="newPassword"
                                                                     class="form-control" id="newPassword" required
                                                                     placeholder="أدخل كلمة المرور الجديدة">
                                                                 <div class="invalid-feedback">ادخل كلمة المرور</div>
+                                                                <span class="note top-icon">يفضل استخدام توليفة من الأحرف الكبيرة والصغيرة، مع أرقام، ورموز أو علامات الترقيم قدر الإمكان عند اختيارك لكلمة السر/المرور.</span>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <label for="confirmPassword" class="form-label">تأكيد
                                                                 كلمة المرور</label>
                                                             <div class="input-group">
-                                                                <input type="password" name="confirm_password"
+                                                                <input type="password" name="confirmPassword"
                                                                     class="form-control" required id="confirmPassword"
                                                                     placeholder="أدخل كلمة المرور مرة أخرى">
                                                                 <div class="invalid-feedback">كلمة المرور غير مطابقة
@@ -229,25 +248,16 @@
                                                                 <div class="file-name" id="file-name">تحميل الملف
                                                                 </div>
                                                                 <label class="custom-file-upload">
-                                                                    <svg width="29" height="24" viewBox="0 0 29 24"
-                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                            d="M15.7926 3.54466C12.5451 2.94671 9.56769 4.85737 8.97365 7.52448C8.84631 8.09618 8.33892 8.50285 7.75297 8.50285C5.14024 8.50285 3.12588 10.5065 3.12588 12.8778C3.12588 15.2351 5.15106 17.2528 7.76547 17.2528C8.45614 17.2528 9.01604 17.8125 9.01604 18.5028C9.01604 19.1932 8.45614 19.7528 7.76547 19.7528C3.87695 19.7528 0.624756 16.7206 0.624756 12.8778C0.624756 9.34338 3.3486 6.50904 6.80125 6.06378C8.1311 2.43833 12.2173 0.345042 16.2441 1.08574C20.0786 1.78216 22.9112 4.88836 22.8925 8.50468C25.9276 8.58151 28.3748 11.059 28.3748 14.1278C28.3748 17.2307 25.8515 19.7528 22.7472 19.7528H21.4967C20.806 19.7528 20.2461 19.1932 20.2461 18.5028C20.2461 17.8125 20.806 17.2528 21.4967 17.2528H22.7472C24.4701 17.2528 25.8736 15.85 25.8736 14.1278C25.8736 12.3955 24.4725 11.0028 22.7472 11.0028H21.4967C21.1165 11.0028 20.757 10.83 20.5197 10.5331C20.2823 10.2363 20.193 9.8476 20.2769 9.47697C20.8687 6.86297 19.0089 4.12821 15.7958 3.54525L15.7926 3.54466Z"
-                                                                            fill="white" />
-                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                            d="M13.134 10.119C13.6224 9.63081 14.4142 9.63081 14.9026 10.119L18.6543 13.869C19.1426 14.3571 19.1426 15.1486 18.6543 15.6367C18.1659 16.1249 17.3741 16.1249 16.8857 15.6367L14.0183 12.7706L11.1509 15.6367C10.6625 16.1249 9.87069 16.1249 9.38232 15.6367C8.89394 15.1486 8.89394 14.3571 9.38232 13.869L13.134 10.119Z"
-                                                                            fill="white" />
-                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                                                            d="M14.0183 9.75285C14.709 9.75285 15.2689 10.3125 15.2689 11.0028V22.2528C15.2689 22.9432 14.709 23.5028 14.0183 23.5028C13.3276 23.5028 12.7677 22.9432 12.7677 22.2528V11.0028C12.7677 10.3125 13.3276 9.75285 14.0183 9.75285Z"
-                                                                            fill="white" />
-                                                                    </svg>
-                                                                    <input type="file" accept="image/*" id="file-upload"
+                                                                    <input type="file" accept="image/*" class="file-upload" id="file-upload"
                                                                         multiple required>
 
                                                                 </label>
                                                             </div>
                                                             <div class="invalid-feedback">حمل الملف</div>
-
+                                                            <span class="note">يرجى إرفاق الهوية بصيغ التالية JPG ،PNG ,PDF</span>
+                                                        </div>
+                                                        <div class="col-md-6 image-preview-container">
+                                                            <!-- Image previews will be dynamically inserted here -->
                                                         </div>
                                                     </div>
                                                 </div>
@@ -300,10 +310,10 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-12">
-                                                                    <label for="zone" class="form-label">الحي</label>
+                                                                    <label for="zoneinner" class="form-label">الحي</label>
                                                                     <div class="input-group">
                                                                         <input type="text" required class="form-control"
-                                                                            id="zone" placeholder="أدخل الحي">
+                                                                            id="zoneinner" placeholder="أدخل الحي">
                                                                         <div class="invalid-feedback">ادخل الحي</div>
                                                                     </div>
                                                                 </div>
@@ -380,43 +390,31 @@
                                                                 </div>
                                                                 <div class="col-md-12">
                                                                     <label for="personalDocument"
-                                                                        class="form-label">تحميل
-                                                                        الملف</label>
+                                                                        class="form-label">وثائق الحساب
+                                                                    </label>
                                                                     <div class="file-upload-custom">
                                                                         <div class="file-name" id="file-name">تحميل
                                                                             الملف
                                                                         </div>
                                                                         <label class="custom-file-upload">
-                                                                            <svg width="29" height="24"
-                                                                                viewBox="0 0 29 24" fill="none"
-                                                                                xmlns="http://www.w3.org/2000/svg">
-                                                                                <path fill-rule="evenodd"
-                                                                                    clip-rule="evenodd"
-                                                                                    d="M15.7926 3.54466C12.5451 2.94671 9.56769 4.85737 8.97365 7.52448C8.84631 8.09618 8.33892 8.50285 7.75297 8.50285C5.14024 8.50285 3.12588 10.5065 3.12588 12.8778C3.12588 15.2351 5.15106 17.2528 7.76547 17.2528C8.45614 17.2528 9.01604 17.8125 9.01604 18.5028C9.01604 19.1932 8.45614 19.7528 7.76547 19.7528C3.87695 19.7528 0.624756 16.7206 0.624756 12.8778C0.624756 9.34338 3.3486 6.50904 6.80125 6.06378C8.1311 2.43833 12.2173 0.345042 16.2441 1.08574C20.0786 1.78216 22.9112 4.88836 22.8925 8.50468C25.9276 8.58151 28.3748 11.059 28.3748 14.1278C28.3748 17.2307 25.8515 19.7528 22.7472 19.7528H21.4967C20.806 19.7528 20.2461 19.1932 20.2461 18.5028C20.2461 17.8125 20.806 17.2528 21.4967 17.2528H22.7472C24.4701 17.2528 25.8736 15.85 25.8736 14.1278C25.8736 12.3955 24.4725 11.0028 22.7472 11.0028H21.4967C21.1165 11.0028 20.757 10.83 20.5197 10.5331C20.2823 10.2363 20.193 9.8476 20.2769 9.47697C20.8687 6.86297 19.0089 4.12821 15.7958 3.54525L15.7926 3.54466Z"
-                                                                                    fill="white" />
-                                                                                <path fill-rule="evenodd"
-                                                                                    clip-rule="evenodd"
-                                                                                    d="M13.134 10.119C13.6224 9.63081 14.4142 9.63081 14.9026 10.119L18.6543 13.869C19.1426 14.3571 19.1426 15.1486 18.6543 15.6367C18.1659 16.1249 17.3741 16.1249 16.8857 15.6367L14.0183 12.7706L11.1509 15.6367C10.6625 16.1249 9.87069 16.1249 9.38232 15.6367C8.89394 15.1486 8.89394 14.3571 9.38232 13.869L13.134 10.119Z"
-                                                                                    fill="white" />
-                                                                                <path fill-rule="evenodd"
-                                                                                    clip-rule="evenodd"
-                                                                                    d="M14.0183 9.75285C14.709 9.75285 15.2689 10.3125 15.2689 11.0028V22.2528C15.2689 22.9432 14.709 23.5028 14.0183 23.5028C13.3276 23.5028 12.7677 22.9432 12.7677 22.2528V11.0028C12.7677 10.3125 13.3276 9.75285 14.0183 9.75285Z"
-                                                                                    fill="white" />
-                                                                            </svg>
-                                                                            <input type="file" id="file-upload"
+                                                                            <input type="file" class="file-upload" id="file-upload1"
                                                                                 accept="image/*" multiple required>
 
                                                                         </label>
 
                                                                     </div>
                                                                     <div class="invalid-feedback">حمل الملف</div>
-                                                                    <!-- <span class="bank-note">يرجى إرفاق وثيقة الصادرة من
-                                                                        البنك</span> -->
+                                                                    <span class="note">يرجى إرفاق وثيقة الصادرة من البنك</span>
+
+                                                                        
+                                                                </div>
+                                                                <div class="col-md-12 image-preview-container">
+                                                                    <!-- Image previews will be dynamically inserted here -->
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6 text-center mx-auto">
-                                                            <img width="80%" src="assets/img/bank.svg" alt="" />
+                                                            <img width="70%" src="assets/img/bank.svg" alt="" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -435,7 +433,7 @@
                                             <div class="row align-items-center">
                                                 <div class="col-md-12">
                                                     <div class="signup-sucess-contaoner">
-                                                        <img width="80%" src="assets/img/Photo.svg" alt="" />
+                                                        <img src="assets/img/Photo.svg" alt="" />
                                                         <h4>قمت بتسجيل حسابك بنجاح
                                                             مرحبا بك...</h4>
                                                         <a class="btn-primary" href="/index.html">الصفحة الرئيسية</a>
@@ -472,7 +470,7 @@
             <div class="col-md-9 left-content">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <ul class="list-unstyled">
                                 <li><a href="#" class="text-white">عن الوقف</a></li>
                                 <li><a href="#" class="text-white">التعريف بالوقف</a></li>
@@ -480,7 +478,7 @@
                                 <li><a href="#" class="text-white">الهيكل الإداري</a></li>
                             </ul>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <ul class="list-unstyled">
                                 <li><a href="#" class="text-white">طلب المنح</a></li>
                                 <li><a href="#" class="text-white">شروط الدعم</a></li>
@@ -488,7 +486,7 @@
                                 <li><a href="#" class="text-white">مشاريع وإنجازات</a></li>
                             </ul>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                             <ul class="list-unstyled">
                                 <li><a href="#" class="text-white">الروابط المهمة</a></li>
                                 <li><a href="#" class="text-white">الأسئلة المتكررة</a></li>

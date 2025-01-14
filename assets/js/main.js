@@ -3,9 +3,6 @@ $('.navbar-toggler').click(function () {
     $('#navbarNav').slideToggle();
 });
 
-
-
-
 // scroll up icon show if scroll > 0
 const scrollUpBtn = document.getElementById("scrollUpBtn");
 window.onscroll = function () {
@@ -22,13 +19,9 @@ scrollUpBtn.addEventListener("click", function () {
     });
 });
 
-
-
-
 // lazy load images
 function lazyLoad() {
     const images = document.querySelectorAll('img[data-src]');
-
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -45,9 +38,6 @@ function lazyLoad() {
     });
 }
 lazyLoad()
-
-
-
 
 // animate-on-scroll
 function animateOnScroll() {

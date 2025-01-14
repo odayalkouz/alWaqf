@@ -57,7 +57,9 @@ if (fileInput)
                     fileNames += ', ';
                 }
             }
-            fileNameDisplay.textContent = fileNames;
+            fileNameDisplay.textContent = 'تم تحميل الملف';
+            // fileNameDisplay.textContent = fileNames;
+
         } else {
             fileNameDisplay.textContent = 'لم يتم اختيار أي ملفات بعد';
         }
@@ -70,7 +72,6 @@ forms.forEach(form => {
     $(form).find("input, select").on("change mousedown", function () {
         validateForm(form);
     });
-
     form.addEventListener('submit', function (event) {
         if (!validateForm(form)) {
             event.preventDefault();
@@ -162,7 +163,6 @@ function validateForm(form) {
     // password && confirm password
     const passwordInput = form.querySelector('input[name="password"]');
     const confirmPasswordInput = form.querySelector('input[name="confirm_password"]');
-
     if (passwordInput && confirmPasswordInput) {
         if (confirmPasswordInput.value.trim() === '') {
             isValid = false;
@@ -183,21 +183,50 @@ function validateForm(form) {
     // activate next if isValid
     if (isValid)
         $(form).find(".next-step").removeClass('disabled');
-
-
     return isValid;
 }
 
-if ($('.datepicker'))
-    $('.datepicker').datepicker({
-        format: 'dd-mm-yyyy',       // Change date format
-        autoclose: true,            // Close picker automatically after selection
-        todayHighlight: true,       // Highlight today's date
-        startDate: new Date(),      // Disable past dates
-        // endDate: '+1y',             // Limit to the next 1 year
-        daysOfWeekDisabled: [0, 6], // Disable weekends (Sunday = 0, Saturday = 6)
-        calendarWeeks: true,        // Show week numbers
-        clearBtn: true,             // Add a clear button
-        disableTouchKeyboard: true, // Disable touch keyboard on mobile devices
-        
+$('.datepicker').datepicker({
+    format: 'dd-mm-yyyy',
+    autoclose: true,
+    todayHighlight: true,
+    startDate: new Date(),
+    daysOfWeekDisabled: [0, 6],
+    calendarWeeks: true,
+    clearBtn: true,
+    disableTouchKeyboard: true,
+}).on('show', function () {
+    $('.clear').each(function () {
+        if ($(this).text() === 'Clear') {
+            $(this).text('مسح');
+        }
+    });
+});
+
+
+
+    // file upload image and preview
+    document.querySelectorAll('.file-upload').forEach((fileInput, index) => {
+        fileInput.addEventListener('change', function () {
+            const previewContainers = document.querySelectorAll('.image-preview-container');
+            const previewContainer = previewContainers[index]; 
+            previewContainer.innerHTML = '';
+            Array.from(fileInput.files).forEach(file => {
+                if (file.type.startsWith('image/')) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        const imgElement = document.createElement('img');
+                        imgElement.src = e.target.result;
+                        imgElement.style.cursor = 'pointer';
+                        imgElement.setAttribute('data-toggle', 'modal');
+                        imgElement.setAttribute('data-target', '#imageModal');
+                        imgElement.addEventListener('click', function () {
+                            document.getElementById('modalImage').src = e.target.result;
+                        });
+                        previewContainer.appendChild(imgElement);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        });
     });

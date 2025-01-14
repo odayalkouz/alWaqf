@@ -34,7 +34,7 @@ sliderData.forEach((slide) => {
     <div class="row w-100 align-items-center">
       <div class="col-12 col-md-5 my-sm-4 my-md-4">
         <div class="left">
-          <img class="w-75" src="${slide.image}" data-swiper-parallax="-150" alt="Logo">
+          <img class="w-60" src="${slide.image}" data-swiper-parallax="-150" alt="Logo">
         </div>
       </div>
       <div class="col-12 col-md-7 my-sm-4 my-md-4">

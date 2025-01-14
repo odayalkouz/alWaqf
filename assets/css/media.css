@@ -54,12 +54,28 @@
         padding-right: 0 !important;
     }
 
-    .banner-slider-container .swiper-slide .left {
+    /* .banner-slider-container .swiper-slide .left {
         margin-top: 80px;
+    } */
+    .achievements-in-numbers-container .achievements-right-content{
+        text-align: center;
     }
 
     .whatClienSay-container .white-container {
         right: 0;
+        left: 0;
+        margin: auto;
+        text-align: center;
+        position: relative;
+        bottom: 70px;
+    }
+
+    .main-sub-content .wizard .nav-tabs>li {
+        margin-bottom: 15px;
+    }
+
+    .main-sub-content .wizard .nav-tabs>li a i {
+        font-size: 10px;
     }
 
     .banner-slider-container .swiper-slide .text {
@@ -92,10 +108,20 @@
         padding: 0.5rem 1rem;
         padding-right: 0;
     }
-    .login-button:hover{
+
+    .login-button:hover {
         background: transparent;
         color: var(--primary);
         opacity: 1;
+    }
+
+    .footer-bottom p {
+
+        font-size: 10px;
+    }
+
+    footer .left-content {
+        padding-left: 0;
     }
 }
 
@@ -133,6 +159,18 @@
 @media (min-width: 1200px) {
     .container {
         max-width: 1250px;
+        flex-flow: row;
+    }
+
+    .navbar {
+        padding: 0rem 1rem;
+    }
+}
+
+
+@media (min-width: 1350px) {
+    .container {
+        max-width: 1180px;
         flex-flow: row;
     }
 
