@@ -242,12 +242,12 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 400px;
+    min-height: 350px;
     color: ar(--white);
 }
 
 .w-60 {
-    width: 60% !important;
+    width: 60% ;
 }
 
 /* banner slider style */
@@ -256,7 +256,7 @@ section {
     padding: 0;
     /* height: calc(100vh - 141px); */
     height: calc(100vh - 400px);
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     cursor: grab;
 }
 
@@ -470,7 +470,7 @@ section {
     background-position: center;
     height: 2px;
     width: 100%;
-    margin: 30px 0 45px 0;
+    margin: 20px 0 15px 0;
 }
 
 .goals-container .goals-right-content {
@@ -504,13 +504,10 @@ section {
     display: flex;
 }
 
-.goals-container .goals-right-content ul li i {
-    width: 25px;
-    height: 25px;
-    background: url(../img/tick-circle.png) no-repeat;
-    background-position: center;
-    background-size: contain;
-    margin: 5px 20px 0 20px;
+.goals-container .goals-right-content ul li img {
+    width: 22px;
+    height: 22px;
+    margin: 5px 5px 0 15px;
 }
 
 .goals-container .goals-right-content ul li:nth-child(3) i,
@@ -614,11 +611,13 @@ section {
     max-width: 100px;
     margin: 8px;
 }
+
 .ratio-16x9 {
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 #exampleModalCenter .modal-body video,
 #exampleModalCenter .modal-body iframe {
     width: 100%;
@@ -639,7 +638,7 @@ section {
     background-position: top, bottom;
     background-repeat: no-repeat;
     transition: background-image 0.5s ease-in-out;
-    padding: 110px 0 50px 0;
+    padding: 80px 0 40px 0;
     margin-top: 20px;
 }
 
@@ -1206,10 +1205,25 @@ footer .list-unstyled a {
     background-size: 7%;
     display: block;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     font-size: 14px;
     font-weight: 600;
     color: var(--white);
+    position: relative;
+}
+
+footer .list-unstyled a:before {
+    content: '';
+    position: absolute;
+    width: 174px;
+    height: 3px;
+    right:  0;
+    bottom: -15px;
+    background: url(../img/linefooter.svg) no-repeat;
+    background-size: contain;
+    background-position: center;
+
+
 }
 
 .footer-bottom {
@@ -1231,12 +1245,13 @@ footer .list-unstyled a {
 }
 
 footer .logo img {
-    max-width: 160px;
-    object-fit: contain;
+    width: 190px;
+    object-fit: fill;
+    margin-top: -20px;
 }
 
 footer .social-media-container {
-    margin-top: 20px;
+    margin-top: 0px;
 }
 
 footer .social-media-container a {
@@ -1298,7 +1313,7 @@ footer .social-media-container a:hover {
     display: flex;
     flex-flow: column;
     background: #F5F5F5;
-    padding: 40px 0px;
+    padding: 20px 0px;
 }
 
 .partners-container h1 {
@@ -1460,25 +1475,12 @@ footer .social-media-container a:hover {
     box-shadow: #BEBEBE40 0px 5px 10px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* whatClienSay container */
 .whatClienSay-container {
     display: flex;
     flex-flow: column;
     background: var(--white);
-    padding: 20px 20px 50px 20px;
+    padding: 0 20px 40px 20px;
 }
 
 .whatClienSay-container h1 {
@@ -1490,7 +1492,7 @@ footer .social-media-container a:hover {
     text-underline-offset: 17px;
     text-decoration-thickness: 2px;
     position: relative;
-    margin: 10px 0px 20px 0px;
+    margin: 0 0px 20px 0px;
 }
 
 .whatClienSay-container>.container {
@@ -1499,7 +1501,7 @@ footer .social-media-container a:hover {
 }
 
 .whatClienSay-container .container>div {
-    padding: 25px 25px;
+    padding: 10px 20px;
 }
 
 .whatClienSay-container .container-with-bg-border {
@@ -1760,7 +1762,7 @@ footer .social-media-container a:hover {
     position: relative;
     margin-bottom: 10px;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .main-sub-content .connecting-line {
@@ -2282,13 +2284,17 @@ input.datepicker {
 .datepicker table tr:first-child {
     height: 0px;
 }
+
 .datepicker table tr {
     height: 30px;
 }
-.datepicker td, .datepicker th {
+
+.datepicker td,
+.datepicker th {
     width: 15px;
     height: 15px;
 }
+
 .datepicker th {
     text-transform: uppercase;
     font-size: 12px;
@@ -2373,12 +2379,12 @@ button.disabled {
 }
 
 .invalid-feedback {
-    height: 20px;
-    margin-top: 0;
+    height: 25px;
+    margin-top: 10px;
 }
 
 .input-group {
-    min-height: 70px;
+    min-height: 60px;
 }
 
 .signup-sucess-contaoner {

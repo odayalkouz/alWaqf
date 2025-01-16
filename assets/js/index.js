@@ -32,12 +32,12 @@ sliderData.forEach((slide) => {
 
     slideElement.innerHTML = `
     <div class="row w-100 align-items-center">
-      <div class="col-12 col-md-5 my-sm-4 my-md-4">
+      <div class="col-12 col-md-5 my-sm-3 my-md-3">
         <div class="left">
           <img class="w-60" src="${slide.image}" data-swiper-parallax="-150" alt="Logo">
         </div>
       </div>
-      <div class="col-12 col-md-7 my-sm-4 my-md-4">
+      <div class="col-12 col-md-7 my-sm-3 my-md-3">
         <div class="right">
           <div class="title" data-swiper-parallax="-300">${slide.title}</div>
           <div class="text" data-swiper-parallax="-300">
@@ -126,6 +126,10 @@ var swiper = new Swiper(".mySwiper1", {
             slidesPerView: 1,
             spaceBetween: 10,
         },
+        "@0.60": {
+            slidesPerView: 2,
+            spaceBetween: 30,
+        },
         "@0.75": {
             slidesPerView: 1,
             spaceBetween: 30,
@@ -158,8 +162,12 @@ var swiper = new Swiper(".newsSwiper", {
             slidesPerView: 1,
             spaceBetween: 10,
         },
+        "@0.60": {
+            slidesPerView: 2,
+            spaceBetween: 30,
+        },
         "@0.75": {
-            slidesPerView: 1,
+            slidesPerView: 2,
             spaceBetween: 30,
         },
         "@1.00": {
@@ -190,8 +198,12 @@ var swiper = new Swiper(".partnersSwiper", {
             slidesPerView: 1,
             spaceBetween: 10,
         },
+        "@0.65": {
+            slidesPerView: 3,
+            spaceBetween: 30,
+        },
         "@0.75": {
-            slidesPerView: 1,
+            slidesPerView: 2,
             spaceBetween: 30,
         },
         "@1.00": {
@@ -200,7 +212,7 @@ var swiper = new Swiper(".partnersSwiper", {
         },
         "@1.50": {
             slidesPerView: 5,
-            spaceBetween: 40,
+            spaceBetween: 30,
         },
     },
 });

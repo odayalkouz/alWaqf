@@ -54,10 +54,7 @@
         padding-right: 0 !important;
     }
 
-    /* .banner-slider-container .swiper-slide .left {
-        margin-top: 80px;
-    } */
-    .achievements-in-numbers-container .achievements-right-content{
+    .achievements-in-numbers-container .achievements-right-content {
         text-align: center;
     }
 
@@ -123,6 +120,24 @@
     footer .left-content {
         padding-left: 0;
     }
+
+    .main-sub-content .prev-disabled,
+    .main-sub-content .next-step {
+        padding: 12px 40px;
+    }
+
+    .whatClienSay-container .white-container {
+        width: 245px;
+    }
+
+    .whatClienSay-container .whatClienSay-right-content img {
+        width: 215px;
+        height: 225px;
+    }
+
+    .whatClienSay-container .container-with-bg-border {
+        height: 260px;
+    }
 }
 
 /* // Medium devices (tablets, 768px and up) */
@@ -135,12 +150,76 @@
         flex-flow: row-reverse;
     }
 
+    .whatClienSay-container .white-container {
+        width: 185px;
+        right: -2px;
+    }
+
+    .banner-slider-container {
+        height: 320px;
+        min-height: auto;
+    }
+
+    .contact-card h5 {
+        font-size: 17px;
+    }
+
+    .contact-card .icon {
+        bottom: 41px;
+        left: 10px;
+        width: 25px;
+        height: 25px;
+
+    }
+
+    .w-60 {
+        width: 75%;
+    }
+
+    .achievements-in-numbers-container .achievements-left-content .counters-elements .item {
+        padding: 15px;
+    }
+    footer .logo img {
+        width: 140px;
+    }
 
 
 }
 
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+    .whatClienSay-container .white-container {
+        width: 295px;
+        right: 18px;
+    }
+    .achievements-in-numbers-container .achievements-left-content .counters-elements .item {
+        padding: 20px;
+    }
+    footer .logo img {
+        width: 190px;
+    }
+    .w-60 {
+        width: 60%;
+    }
+
+    .contact-card .icon {
+        bottom: 15px;
+        left: 20px;
+        width: 35px;
+        height: 35px;
+
+    }
+
+    .contact-card h5 {
+        font-size: 20px;
+    }
+
+    .banner-slider-container {
+        height: calc(100vh - 400px);
+        min-height: 350px;
+
+    }
+
     .navbar-expand-lg .navbar-nav .nav-link {
         padding-right: 1.3rem;
         padding-left: 1.3rem;
