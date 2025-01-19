@@ -219,8 +219,16 @@
         box-shadow: #047E73 0px 3px;
         transition: var(--transition);
     }
-    .login-button:hover {
+    .login-button:hover{
         color: var(--white);
+        background: var(--primary);
+        box-shadow: #047E73 0px 3px;
+        
+    }
+    .login-button.active {
+        color: var(--white);
+        background: var(--secondary);
+        box-shadow: #977a38 0px 3px;
     }
     .navbar-nav {
         padding: 0;
