@@ -50,7 +50,7 @@ const fileNameDisplay = document.getElementById('file-name');
 if (fileInput)
     fileInput.addEventListener('change', function () {
         if (fileInput.files.length > 0) {
-            let fileNames = 'الملفات المختارة: ';
+            let fileNames = ' ';
             for (let i = 0; i < fileInput.files.length; i++) {
                 fileNames += fileInput.files[i].name;
                 if (i < fileInput.files.length - 1) {
@@ -58,7 +58,7 @@ if (fileInput)
                 }
             }
             fileNameDisplay.textContent = 'تم تحميل الملف';
-            // fileNameDisplay.textContent = fileNames;
+            fileNameDisplay.textContent = fileNames;
 
         } else {
             fileNameDisplay.textContent = 'لم يتم اختيار أي ملفات بعد';

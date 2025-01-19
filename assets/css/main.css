@@ -591,11 +591,9 @@ section {
     justify-content: center;
 }
 
-#imageModal .modal-body img {
+/* #imageModal .modal-body img {
     width: 50%;
-
-
-}
+} */
 
 .image-preview-container {
     display: flex;

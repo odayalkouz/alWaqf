@@ -188,6 +188,9 @@
 
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+        .container {
+            max-width: 1100px;
+        }
     .whatClienSay-container .white-container {
         width: 295px;
         right: 18px;
