@@ -16,9 +16,16 @@
     footer .right-content {
         padding: 30px 0;
     }
+    .main-sub-content .prev-disabled,
+    .main-sub-content .next-step,.main-sub-content .prev-step {
+        padding: 12px 40px;
+    }
 }
 
 @media (max-width: 735px) {
+    .buttons-form-section {
+        padding: 0;
+    }
     .navbar {
         padding: 0.5rem 1rem;
     }
@@ -123,7 +130,7 @@
     }
 
     .main-sub-content .prev-disabled,
-    .main-sub-content .next-step {
+    .main-sub-content .next-step,.main-sub-content .prev-step {
         padding: 12px 40px;
     }
 
@@ -138,6 +145,12 @@
 
     .whatClienSay-container .container-with-bg-border {
         height: 260px;
+    }
+    .signup-sucess-contaoner {
+        width: auto;
+    }
+    .signup-sucess-contaoner h4 {
+        font-size: 18px;
     }
 }
 
