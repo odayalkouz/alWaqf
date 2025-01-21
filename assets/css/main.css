@@ -2628,3 +2628,15 @@ button.disabled {
     border-radius: 5px;
     font-size: 14px;
 }
+
+.nav-item.dropdown .dropdown-menu {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    top: 40px;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+}
