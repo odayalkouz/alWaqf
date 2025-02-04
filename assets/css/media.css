@@ -217,6 +217,9 @@
 
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+    .main-sub-content .next-step,.main-sub-content .prev-disabled {
+        padding: 12px 85px;
+    }
     .login-button {
         color: var(--white);
         background: var(--primary);
