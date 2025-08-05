@@ -1,22 +1,34 @@
 // swiper slider configuration
 const sliderData = [
     {
-        title: "رؤيتنا",
-        text: "الريادة في العمل الخيري والتنمية المستدامة، لتحقيق أثر إيجابي ومستدام يعزز قيم التكافل ورفاهية المجتمع.",
-        image: "assets/img/slider1-right.png",
-        backgroundColor: "assets/img/bg-slider.jpg"
+        text: "<b>تمكين الفئات المحتاجة</b> بما يحقق الحياة الكريمة والفرص المستدامة للنمو والتطور",
+        image: "assets/img/banner/small-image-slider1.svg",
+        backgroundColor: "assets/img/banner/bg-slider1.jpg",
+        style:"custom-slider1",
     },
     {
-        title: "مهمتنا",
-        text: "تقديم المبادرات التنموية التي تحقق التغيير المستدام في حياة الأفراد والمجتمعات.",
-        image: "assets/img/slider1-right.png",
-        backgroundColor: "assets/img/bg-slider.jpg"
+        text: "<b>استدامة العطاء لأجيال المستقبل </b>من خلال توفير بيئة مستدامة للأجيال القادمة",
+        image: "assets/img/banner/small-image-slider1.svg",
+        backgroundColor: "assets/img/banner/bg-slider1.jpg",
+        style:"custom-slider2",
     },
     {
-        title: "قيمنا",
-        text: "الشفافية، المسؤولية، التكاتف، الإبداع.",
-        image: "assets/img/slider1-right.png",
-        backgroundColor: "assets/img/bg-slider.jpg"
+        title: "<b>-</b>رؤيـتـنـا<b>-</b>",
+        text: "<b>الريادة في العمل الخيري</b> والتنمية المستدامة، لتحقيق أثر إيجابي ومستدام يعزز قيم التكافل ورفاهية المجتمع.",
+        image: "assets/img/banner/small-image-slider3.png",
+        backgroundColor: "assets/img/banner/bg-slider1.jpg",
+        style:"custom-slider3",
+    },
+    {
+        text: "<b> تعزيز التنمية الاجتماعية والاقتصادية</b> وتحقيق الأثر الإيجابي في مختلف مجالات </br>الحياة",
+        backgroundColor: "assets/img/banner/bg-slider4.svg",
+        style:"custom-slider4",
+    },
+    {
+        text: "<b>التعاون مع الجهات الخيرية والتنموية</b> لتحقيق أهداف مشتركة",
+        image: "assets/img/banner/small-image-slider5.png",
+        backgroundColor: "assets/img/banner/bg-slider5.jpg",
+        style:"custom-slider5",
     }
 ];
 const swiperWrapper = document.getElementById('swiper-wrapper');
@@ -32,25 +44,26 @@ sliderData.forEach((slide) => {
 
     slideElement.innerHTML = `
     <div class="row w-100 align-items-center">
-      <div class="col-12 col-md-5 my-sm-3 my-md-3">
-        <div class="left">
-          <img class="w-60" src="${slide.image}" data-swiper-parallax="-150" alt="Logo">
-        </div>
+  <div class="col-12 col-md-5 my-sm-3 my-md-3">
+    <div class="left ${slide.style}">
+      ${slide.image ? `<img class="" src="${slide.image}" style="width:80%" data-swiper-parallax="-150" alt="Logo" />` : ''}
+    </div>
+  </div>
+  <div class="col-12 col-md-7 my-sm-3 my-md-3">
+    <div class="right ${slide.style}">
+      ${slide.title ? `<div class="title" data-swiper-parallax="-300">${slide.title}</div>` : ''}
+      <div class="text" data-swiper-parallax="-300">
+        <p>${slide.text}</p>
       </div>
-      <div class="col-12 col-md-7 my-sm-3 my-md-3">
-        <div class="right">
-          <div class="title" data-swiper-parallax="-300">${slide.title}</div>
-          <div class="text" data-swiper-parallax="-300">
-            <p>${slide.text}</p>
-          </div>
-        </div>
-      </div>
-    </div>`;
+    </div>
+  </div>
+</div>`;
 
     swiperWrapper.appendChild(slideElement);
 });
 var swiper = new Swiper(".mySwiper", {
     speed: 600,
+
     parallax: true,
     pagination: {
         el: ".swiper-pagination",
@@ -61,8 +74,9 @@ var swiper = new Swiper(".mySwiper", {
         prevEl: ".swiper-button-prev",
     },
     autoplay: {
-        delay: 3000,
+        delay: 30000000
     },
+    
 });
 
 

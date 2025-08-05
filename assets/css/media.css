@@ -184,10 +184,10 @@
         right: -2px;
     }
 
-    .banner-slider-container {
+    /* .banner-slider-container {
         height: 320px;
         min-height: auto;
-    }
+    } */
 
     .contact-card h5 {
         font-size: 17px;
@@ -278,11 +278,11 @@
         font-size: 20px;
     }
 
-    .banner-slider-container {
+    /* .banner-slider-container {
         height: calc(100vh - 400px);
         min-height: 350px;
 
-    }
+    } */
 
     .navbar-expand-lg .navbar-nav .nav-link {
         padding-right: 0.9rem;
