@@ -8,7 +8,7 @@ const sliderData = [
     },
     {
         text: "<b>استدامة العطاء لأجيال المستقبل </b>من خلال توفير بيئة مستدامة للأجيال القادمة",
-        image: "assets/img/banner/small-image-slider1.svg",
+        image: "assets/img/banner/small-image-slider2.png",
         backgroundColor: "assets/img/banner/bg-slider1.jpg",
         style:"custom-slider2",
     },
@@ -21,7 +21,7 @@ const sliderData = [
     },
     {
         text: "<b> تعزيز التنمية الاجتماعية والاقتصادية</b> وتحقيق الأثر الإيجابي في مختلف مجالات </br>الحياة",
-        backgroundColor: "assets/img/banner/bg-slider4.svg",
+        backgroundColor: "assets/img/banner/bg-slider4.jpg",
         style:"custom-slider4",
     },
     {
@@ -74,7 +74,7 @@ var swiper = new Swiper(".mySwiper", {
         prevEl: ".swiper-button-prev",
     },
     autoplay: {
-        delay: 3000
+        delay: 3000000
     },
     
 });
