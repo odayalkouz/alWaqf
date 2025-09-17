@@ -2736,3 +2736,7 @@ button.disabled {
     display: block;
     opacity: 1;
 }
+.welcome-user-container {
+    color: #FFF;
+    font-weight: 700;
+}

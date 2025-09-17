@@ -1,3 +1,19 @@
+function adjustMainHeight() {
+  const header = document.querySelector("header");
+  const footer = document.querySelector("footer");
+  const main = document.querySelector("main");
+  if (!header || !footer || !main) return;
+  const windowHeight = window.innerHeight;
+  const headerHeight = header.offsetHeight;
+  const footerHeight = footer.offsetHeight;
+  const mainHeight = windowHeight - headerHeight - footerHeight;
+  main.style.height = mainHeight + "px";
+}
+window.addEventListener("load", adjustMainHeight);
+window.addEventListener("resize", adjustMainHeight);
+// css change ->
+//-> move bg from ..main-sub-content to main tag
+
 // Hamburger menu slideToggle
 $('.navbar-toggler').click(function () {
     $('#navbarNav').slideToggle();
