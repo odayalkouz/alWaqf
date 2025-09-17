@@ -1,18 +1,28 @@
-function adjustMainHeight() {
+function adjustMainHeightAndCheckZoom() {
   const header = document.querySelector("header");
   const footer = document.querySelector("footer");
   const main = document.querySelector("main");
   if (!header || !footer || !main) return;
+
   const windowHeight = window.innerHeight;
   const headerHeight = header.offsetHeight;
   const footerHeight = footer.offsetHeight;
   const mainHeight = windowHeight - headerHeight - footerHeight;
   main.style.height = mainHeight + "px";
+
+  const zoom = Math.round(window.devicePixelRatio * 100);
+
+  if (zoom === 125 || zoom > 63) {
+    alert("Browser zoom is 100%");
+    main.style.height = "auto";
+  } 
 }
-window.addEventListener("load", adjustMainHeight);
-window.addEventListener("resize", adjustMainHeight);
+
+window.addEventListener("load", adjustMainHeightAndCheckZoom);
+window.addEventListener("resize", adjustMainHeightAndCheckZoom);
+
 // css change ->
-//-> move bg from ..main-sub-content to main tag
+//-> move bg from .main-sub-content to main tag
 
 // Hamburger menu slideToggle
 $('.navbar-toggler').click(function () {
