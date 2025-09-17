@@ -1,28 +1,57 @@
-function adjustMainHeightAndCheckZoom() {
+(() => {
+  let zoomWarned = false;
+
+  function getZoomPercent() {
+    if (window.visualViewport && typeof window.visualViewport.scale === 'number') {
+      return Math.round(window.visualViewport.scale * 100);
+    }
+    return Math.round(window.devicePixelRatio * 100);
+  }
+
+  function adjustMainHeightAndCheckZoom() {
+    const header = document.querySelector("header");
+    const footer = document.querySelector("footer");
+    const main   = document.querySelector("main");
+    if (!header || !footer || !main) return;
+
+    const vh           = window.innerHeight;
+    const headerHeight = header.offsetHeight || 0;
+    const footerHeight = footer.offsetHeight || 0;
+    const target       = Math.max(0, vh - headerHeight - footerHeight);
+
+    main.style.minHeight = target + "px";
+
+ 
+    if (main.scrollHeight <= target) {
+      main.style.height = target + "px";
+    } else {
+      main.style.height = "auto";
+    }
+
+    const zoom = getZoomPercent();
+    if (zoom !== 100 && !zoomWarned) {
+      zoomWarned = true;
+      alert(`Browser zoom is ${zoom}% (recommended: 100%)`);
+    }
+  }
+
+  let t;
+  function onResize() {
+    clearTimeout(t);
+    t = setTimeout(adjustMainHeightAndCheckZoom, 100);
+  }
+
+  window.addEventListener("load", adjustMainHeightAndCheckZoom);
+  window.addEventListener("resize", onResize);
+
+  const ro = new ResizeObserver(adjustMainHeightAndCheckZoom);
   const header = document.querySelector("header");
   const footer = document.querySelector("footer");
-  const main = document.querySelector("main");
-  if (!header || !footer || !main) return;
+  if (header) ro.observe(header);
+  if (footer) ro.observe(footer);
+})();
 
-  const windowHeight = window.innerHeight;
-  const headerHeight = header.offsetHeight;
-  const footerHeight = footer.offsetHeight;
-  const mainHeight = windowHeight - headerHeight - footerHeight;
-  main.style.height = mainHeight + "px";
 
-  const zoom = Math.round(window.devicePixelRatio * 100);
-
-  if (zoom === 125 || zoom > 63) {
-    alert("Browser zoom is 100%");
-    main.style.height = "auto";
-  } 
-}
-
-window.addEventListener("load", adjustMainHeightAndCheckZoom);
-window.addEventListener("resize", adjustMainHeightAndCheckZoom);
-
-// css change ->
-//-> move bg from .main-sub-content to main tag
 
 // Hamburger menu slideToggle
 $('.navbar-toggler').click(function () {
